@@ -14,6 +14,8 @@ public class PlayerMovement : MonoBehaviour
     private Animator anim;
 
     private float speed = 7f;
+    private float walkSpeed = 3f;
+    private float diagSpeed = 0.6f;
     public float gravity = -5;
 
     public Vector3 velocity;
@@ -21,7 +23,6 @@ public class PlayerMovement : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         data = config.getData();
-        Debug.Log(data);
     }
 
     void FixedUpdate()
@@ -31,46 +32,43 @@ public class PlayerMovement : MonoBehaviour
 
     private void Move()
     {
-        bool isWalking = false;
+        bool forward = false;
+        bool right = false;
+        bool left = false;
+        bool backward = false;
+        bool walk = false;
 
         Vector3 temp = Vector3.zero;
         if (Input.GetKey(data.right))
         {
-            isWalking = true;
-            SetWalkingAnimation(true);
+            right = true;
             temp += transform.right;
         }
         if (Input.GetKey(data.left))
         {
-            isWalking = true;
-            SetWalkingAnimation(true);
+            left = true;
             temp += transform.right * -1;
         }
         if (Input.GetKey(data.forward))
         {
-            isWalking = true;
-            SetWalkingAnimation(true);
+            forward = true;
             temp += transform.forward;
         }
         if (Input.GetKey(data.backward))
         {
-            isWalking = true;
-            SetWalkingAnimation(true);
+            backward = true;
             temp += transform.forward * -1;
         }
-        if (!isWalking)
+        if (Input.GetKey(KeyCode.LeftShift))
         {
-            SetWalkingAnimation(false);
+            walk = true;
         }
-        if (Input.GetKey(data.attack))
-        {
-            Debug.Log("Attack");
-            anim.SetTrigger("Attack");
-        }
-        controller.Move(temp * speed * Time.fixedDeltaTime);
-        velocity.y += gravity * Time.fixedDeltaTime;
 
-        controller.Move(velocity * Time.fixedDeltaTime);
+
+        SetAnimation(left, forward, right, backward, walk);
+
+        MoveController(temp, left, forward, right, backward, walk);
+        //Diagonal move
 
         /*if (controller.isGrounded)
         {
@@ -78,18 +76,161 @@ public class PlayerMovement : MonoBehaviour
         }*/
 
     }
-    void SetWalkingAnimation(bool isWalking)
+
+    void MoveController(Vector3 temp, bool left, bool forward, bool right, bool backward, bool walk)
     {
-        if (anim != null)
+        if ((left && forward) || (left && backward) || (right && forward) || (right && backward))
         {
-            if (isWalking)
+            if (walk || backward)
             {
-                anim.SetBool("isRunning", true);
+                controller.Move(temp * diagSpeed * walkSpeed * Time.fixedDeltaTime);
+
             }
             else
             {
-                anim.SetBool("isRunning", false);
+                controller.Move(temp * diagSpeed * speed * Time.fixedDeltaTime);
             }
+        } 
+        else
+        {
+            if (walk || backward)
+            {
+                controller.Move(temp * walkSpeed * Time.fixedDeltaTime);
+            }
+            else
+            {
+                controller.Move(temp * speed * Time.fixedDeltaTime);
+            }
+        }
+        velocity.y += gravity * Time.fixedDeltaTime;
+        controller.Move(velocity * Time.fixedDeltaTime);
+    }
+
+    void resetAnimation()
+    {
+        anim.SetBool("isRunning", false);
+        anim.SetBool("isWalking", false);
+        anim.SetBool("goBackward", false);
+        anim.SetInteger("Strafe", 0);
+    }
+
+    void SetAnimation(bool left, bool forward, bool right, bool backward, bool walk)
+    {
+        if((left || right) && !forward && !backward) //Only left or right
+        {
+            if (left)
+            {
+                if (walk)
+                {
+                    SetWalkAnimation(-1);
+                } 
+                else
+                {
+                    SetMoveAnimation(-1);
+                }
+            } 
+            else
+            {
+                if (walk)
+                {
+                    SetWalkAnimation(1);
+                }
+                else
+                {
+                    SetMoveAnimation(1);
+                }
+            }
+        } 
+        else if(forward && !backward)
+        {
+            if (right && !left)
+            {
+                if (walk)
+                {
+                    SetWalkAnimation(1);
+                }
+                else
+                {
+                    SetMoveAnimation(0);
+                }
+            }
+            else if(left && !right)
+            {
+                if (walk)
+                {
+                    SetWalkAnimation(-1);
+                }
+                else
+                {
+                    SetMoveAnimation(0);
+                }
+            } 
+            else
+            {
+                if (walk)
+                {
+                    SetWalkAnimation(0);
+                }
+                else
+                {
+                    SetMoveAnimation(0);
+                }
+            }
+        } 
+        else if (backward && !forward)
+        {
+            SetBackwardAnimation(walk);
+        }
+
+        if (!forward && !backward && !left && !right)
+        {
+            resetAnimation();
+        }
+    }
+
+    void SetBackwardAnimation(bool walk)
+    {
+        if (anim != null)
+        {
+            anim.SetBool("goBackward", true);
+            if (walk)
+            {
+                anim.SetBool("isWalking", true);
+            }
+            else
+            {
+                anim.SetBool("isRunning", true);
+            }
+        }
+        else
+        {
+            Debug.LogError("No animation loaded");
+        }
+    }
+
+    //Strafe -1 = left   |   strafe 1 = right
+    void SetWalkAnimation(int strafe)
+    {
+        if (anim != null) { 
+            anim.SetBool("isWalking", true);
+            anim.SetBool("isRunning", false);
+            anim.SetBool("goBackward", false);
+            anim.SetInteger("Strafe", strafe);
+        }
+        else
+        {
+            Debug.LogError("No animation loaded");
+        }
+    }
+
+    void SetMoveAnimation(int strafe)
+    {
+        if (anim != null)
+        {
+            anim.SetBool("isRunning", true);
+            anim.SetBool("isWalking", false);
+            anim.SetBool("goBackward", false);
+            anim.SetInteger("Strafe", strafe);
         }
         else
         {
