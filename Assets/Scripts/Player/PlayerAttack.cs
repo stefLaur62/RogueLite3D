@@ -26,11 +26,11 @@ public class PlayerAttack : MonoBehaviour
 
     public void Attack()
     {
-        if (isAttacking)
+        if (isAttacking && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.80)
         {
-            if (anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.80)
-                isAttacking = false;
-        } else if (Input.GetKeyDown(parameterData.attack))
+            isAttacking = false;
+        } 
+        else if (Input.GetKeyDown(parameterData.attack))
         {
             SetAttackingAnimation();
             isAttacking = true;

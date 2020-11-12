@@ -16,9 +16,18 @@ public class PlayerMovement : MonoBehaviour
     private float speed = 7f;
     private float walkSpeed = 3f;
     private float diagSpeed = 0.6f;
-    public float gravity = -5;
+    public float gravity = -17f;
+    public float jumpHeight = 1f;
 
     public Vector3 velocity;
+
+    public Transform groundCheck;
+    public float groundDistance = 0.4f;
+    public LayerMask groundMask;
+
+    public bool isGrounded;
+
+    public PlayerAttack playerAttack;
     void Start()
     {
         anim = GetComponent<Animator>();
@@ -37,43 +46,50 @@ public class PlayerMovement : MonoBehaviour
         bool left = false;
         bool backward = false;
         bool walk = false;
+        bool jump = false;
+        anim.ResetTrigger("isJumping");
+        isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
+        if(isGrounded && velocity.y < 0)
+        {
+            velocity.y = -2f;
+        }
 
         Vector3 temp = Vector3.zero;
-        if (Input.GetKey(data.right))
+        if (!playerAttack.isAttacking || !isGrounded)
         {
-            right = true;
-            temp += transform.right;
-        }
-        if (Input.GetKey(data.left))
-        {
-            left = true;
-            temp += transform.right * -1;
-        }
-        if (Input.GetKey(data.forward))
-        {
-            forward = true;
-            temp += transform.forward;
-        }
-        if (Input.GetKey(data.backward))
-        {
-            backward = true;
-            temp += transform.forward * -1;
-        }
-        if (Input.GetKey(KeyCode.LeftShift))
-        {
-            walk = true;
-        }
+            if (Input.GetKey(data.right))
+            {
+                right = true;
+                temp += transform.right;
+            }
+            if (Input.GetKey(data.left))
+            {
+                left = true;
+                temp += transform.right * -1;
+            }
+            if (Input.GetKey(data.forward))
+            {
+                forward = true;
+                temp += transform.forward;
+            }
+            if (Input.GetKey(data.backward))
+            {
+                backward = true;
+                temp += transform.forward * -1;
+            }
+            if (Input.GetKey(KeyCode.LeftShift))
+            {
+                walk = true;
+            }
+            if (Input.GetKey(data.jump) && isGrounded)
+            {
+                jump = true;
+                velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
 
-
-        SetAnimation(left, forward, right, backward, walk);
-
+            }
+            SetAnimation(left, forward, right, backward, walk, jump);
+        }
         MoveController(temp, left, forward, right, backward, walk);
-        //Diagonal move
-
-        /*if (controller.isGrounded)
-        {
-            velocityY = 0;
-        }*/
 
     }
 
@@ -114,9 +130,14 @@ public class PlayerMovement : MonoBehaviour
         anim.SetInteger("Strafe", 0);
     }
 
-    void SetAnimation(bool left, bool forward, bool right, bool backward, bool walk)
+    void SetAnimation(bool left, bool forward, bool right, bool backward, bool walk, bool jump)
     {
-        if((left || right) && !forward && !backward) //Only left or right
+        if (jump)
+        {
+            anim.SetTrigger("isJumping");
+
+        }
+        else if((left || right) && !forward && !backward) //Only left or right
         {
             if (left)
             {
@@ -237,10 +258,4 @@ public class PlayerMovement : MonoBehaviour
             Debug.LogError("No animation loaded");
         }
     }
-
-    private void ChangeInput()
-    {
-        throw new NotImplementedException();
-    }
-
 }
