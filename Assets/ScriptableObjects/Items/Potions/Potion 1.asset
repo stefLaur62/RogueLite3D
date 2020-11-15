@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44840f2001016444fb09b143b6907540, type: 3}
+  m_Name: Potion 1
+  m_EditorClassIdentifier: 
+  prefab: {fileID: 6852402430627038030, guid: 3b777f1193645fa4287b427a36c2730b, type: 3}
+  type: 0
+  description: 'Use this potion to heal your character ! '
+  isStackable: 0
+  restoreHealthValue: 25

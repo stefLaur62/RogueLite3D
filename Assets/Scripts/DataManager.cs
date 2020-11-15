@@ -14,7 +14,6 @@ public class DataManager : MonoBehaviour
     {
         string json = JsonUtility.ToJson(data);
         return writeToFile(file, json);
-
     }
 
     public void Load()
@@ -29,10 +28,12 @@ public class DataManager : MonoBehaviour
 
         string path = GetFilePath(filename);
         if (File.Exists(path)){
+#if UNITY_EDITOR
             if (!EditorUtility.DisplayDialog("Sauvegarde existante", "Supprimer la précedente sauvegarde?", "Oui", "Non"))
             {
                 return false;
             }
+#endif
         }
         Debug.Log("Start save...");
         FileStream fileStream = new FileStream(path, FileMode.Create);
