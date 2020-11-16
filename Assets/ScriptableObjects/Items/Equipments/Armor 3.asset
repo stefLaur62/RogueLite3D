@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a99329e0da5a5459cb163bb6f46e10, type: 3}
   m_Name: Armor 3
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6016571204420084652, guid: 368de01d3b8c29b4ea987960ea79135b, type: 3}
+  id: 8
+  uiDisplay: {fileID: 21300000, guid: 358b32c00e9785d4aafdefa65723e9b0, type: 3}
   type: 1
   description: 
-  isStackable: 0
-  atkBonus: 0
-  defenceBonus: 0
+  buffs: []

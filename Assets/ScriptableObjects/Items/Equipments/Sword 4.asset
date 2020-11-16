@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a99329e0da5a5459cb163bb6f46e10, type: 3}
   m_Name: Sword 4
   m_EditorClassIdentifier: 
-  prefab: {fileID: 476394051667600223, guid: 8d4b3100775989a43a63780ced569d61, type: 3}
+  id: 5
+  uiDisplay: {fileID: 21300000, guid: 8107ab4d77094bc42ad3a284c9123966, type: 3}
   type: 1
   description: 
-  isStackable: 0
-  atkBonus: 20
-  defenceBonus: 0
+  buffs: []

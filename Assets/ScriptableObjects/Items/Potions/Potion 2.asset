@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44840f2001016444fb09b143b6907540, type: 3}
   m_Name: Potion 2
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6591673179317965297, guid: 4e7597745442617488502ab509c8e12d, type: 3}
+  id: 12
+  uiDisplay: {fileID: 21300000, guid: 95ec8e7db0db95f4d980ac6a8bf713c5, type: 3}
   type: 0
   description: 
   isStackable: 0

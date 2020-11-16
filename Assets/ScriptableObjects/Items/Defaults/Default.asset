@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e53b6d52de6e3a4e890916182c919b4, type: 3}
   m_Name: Default
   m_EditorClassIdentifier: 
-  prefab: {fileID: 0}
+  id: 0
+  uiDisplay: {fileID: 0}
   type: 2
-  description: Test of a default object
+  description: Default object
   isStackable: 0

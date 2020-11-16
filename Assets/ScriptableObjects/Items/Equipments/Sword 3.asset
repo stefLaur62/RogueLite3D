@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a99329e0da5a5459cb163bb6f46e10, type: 3}
   m_Name: Sword 3
   m_EditorClassIdentifier: 
-  prefab: {fileID: 236834072828311823, guid: 7f7321044f246924b941d977a7486e48, type: 3}
+  id: 4
+  uiDisplay: {fileID: 21300000, guid: c8f0eb68a23b70246a163824c28cad9e, type: 3}
   type: 1
   description: 
   isStackable: 0

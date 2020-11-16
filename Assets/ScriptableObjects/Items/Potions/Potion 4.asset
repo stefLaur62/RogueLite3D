@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44840f2001016444fb09b143b6907540, type: 3}
   m_Name: Potion 4
   m_EditorClassIdentifier: 
-  prefab: {fileID: 5684808088880701280, guid: 3f359d8b1b23e3841b610851e2a38d58, type: 3}
+  id: 14
+  uiDisplay: {fileID: 21300000, guid: f8e3ec112e9b1bb49939af1e795d2c3f, type: 3}
   type: 0
   description: 
-  isStackable: 0
-  restoreHealthValue: 100
+  buffs: []

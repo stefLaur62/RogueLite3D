@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class PotionObject : ItemObject
 {
-    public int restoreHealthValue;
     public void Awake()
     {
         type = ItemType.Potion;
