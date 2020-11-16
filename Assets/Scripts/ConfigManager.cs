@@ -19,9 +19,7 @@ public class ConfigManager : MonoBehaviour
             Directory.CreateDirectory(Application.persistentDataPath + "/Config/");
             File.Create(GetFilePath(file));
         }
-        Debug.Log("AAA");
         Load();
-        Debug.Log(data.jump.ToString());
     }
 
    

@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
 
     public void Start()
     {
-        inventory.savePath = "/Inventory.Save";
         inventory.Load();
     }
 

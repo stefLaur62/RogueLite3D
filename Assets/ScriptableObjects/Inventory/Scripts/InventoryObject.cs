@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
@@ -13,6 +14,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
     public Inventory container;
     public void AddItem(Item _item, int _amount)
     {
+
         if (_item.buffs.Length > 0)
         {
             container.items.Add(new InventorySlot(_item.id, _item, _amount));
@@ -37,6 +39,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     public void OnBeforeSerialize()
     {
+
     }
 
     public void Save()
@@ -58,6 +61,18 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
             JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
             file.Close();
         }
+    }
+    public void OnEnable()
+    {
+        SetDatase();
+    }
+    public void SetDatase()
+    {
+#if UNITY_EDITOR
+        database = (ItemDatabaseObject)AssetDatabase.LoadAssetAtPath("Assets/Resources/Database.asset", typeof(ItemDatabaseObject));
+#else
+        database = Resources.Load<ItemDatabaseObject>("Database");
+#endif
     }
 }
 

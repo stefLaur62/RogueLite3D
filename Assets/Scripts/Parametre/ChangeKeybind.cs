@@ -7,7 +7,7 @@ using System;
 
 public class ChangeKeybind : MonoBehaviour
 {
-    public Text name;
+    public Text _name;
     public Text keybind;
     public GameObject message;
 
@@ -30,7 +30,7 @@ public class ChangeKeybind : MonoBehaviour
 
     private void LoadKey()
     {
-        switch (name.gameObject.name)
+        switch (_name.gameObject.name)
         {
             case "Forward":
                 keybind.text = configManager.GetForward().ToString();
@@ -95,7 +95,7 @@ public class ChangeKeybind : MonoBehaviour
 
     public void BindKey(KeyCode key)
     {
-        switch (name.gameObject.name)
+        switch (_name.gameObject.name)
          {
              case "Forward":
                 configManager.SetForward(key);
