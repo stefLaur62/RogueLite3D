@@ -12,7 +12,7 @@ public class ChangeKeybind : MonoBehaviour
     public GameObject message;
 
     public ConfigManager configManager;
-
+    public Keybinds keybinds;
     private bool canChange;
 
     private readonly Array keyCodes = Enum.GetValues(typeof(KeyCode));
@@ -21,10 +21,9 @@ public class ChangeKeybind : MonoBehaviour
     {
         canChange = false;
 
-        configManager.SetFilename("config.txt");
+/*        configManager.SetFilename("config.txt");
 
-        configManager.Load();
-
+        configManager.Load();*/
         LoadKey();
     }
 
@@ -33,25 +32,26 @@ public class ChangeKeybind : MonoBehaviour
         switch (_name.gameObject.name)
         {
             case "Forward":
-                keybind.text = configManager.GetForward().ToString();
+                keybind.text = keybinds.forward.ToString();
+
                 break;
             case "Backward":
-                keybind.text = configManager.GetBackward().ToString();
+                keybind.text = keybinds.backward.ToString();
                 break;
             case "Left":
-                keybind.text = configManager.GetLeft().ToString();
+                keybind.text = keybinds.left.ToString();
                 break;
             case "Right":
-                keybind.text = configManager.GetRight().ToString();
+                keybind.text = keybinds.right.ToString();
                 break;
             case "Jump":
-                keybind.text = configManager.GetJump().ToString();
+                keybind.text = keybinds.jump.ToString();
                 break;
             case "Interact":
-                keybind.text = configManager.GetInteract().ToString();
+                keybind.text = keybinds.interact.ToString();
                 break;
             case "Attack":
-                keybind.text = configManager.GetAttack().ToString();
+                keybind.text = keybinds.attack.ToString();
                 break;
         }
     }
@@ -77,14 +77,11 @@ public class ChangeKeybind : MonoBehaviour
             {
                 if (Input.GetKey(keyCode))
                 {
-                    Debug.Log("KeyCode down: " + keyCode);
                     message.SetActive(false);
                     canChange = false;
                     keybind.text = keyCode.ToString();
                     //change key in file
                     BindKey(keyCode);
-                    configManager.Save();
-                    
                     StopCoroutine("MyCoroutine");
                     break;
                 }
@@ -95,29 +92,6 @@ public class ChangeKeybind : MonoBehaviour
 
     public void BindKey(KeyCode key)
     {
-        switch (_name.gameObject.name)
-         {
-             case "Forward":
-                configManager.SetForward(key);
-                break;
-            case "Backward":
-                configManager.SetBackward(key);
-                break;
-            case "Left":
-                configManager.SetLeft(key);
-                break;
-            case "Right":
-                configManager.SetRight(key);
-                break;
-            case "Jump":
-                configManager.SetJump(key);
-                break;
-            case "Interact":
-                configManager.SetInteract(key);
-                break;
-            case "Attack":
-                configManager.SetAttack(key);
-                break;
-        }
+        keybinds.ChangeKeybind(_name.gameObject.name,key);
     }
 }

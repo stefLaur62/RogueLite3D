@@ -1336,7 +1336,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 79228471}
-  config: {fileID: 188534639}
+  keybinds: {fileID: 11400000, guid: e9f234eb030841f47b779cd03491eab1, type: 2}
   gravity: -17
   jumpHeight: 0.8
   velocity: {x: 0, y: 0, z: 0}
@@ -1361,6 +1361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerData: {fileID: 167952534}
   configData: {fileID: 188534639}
+  keybinds: {fileID: 11400000, guid: e9f234eb030841f47b779cd03491eab1, type: 2}
   isAttacking: 0
 --- !u!114 &79228474
 MonoBehaviour:
@@ -2769,6 +2770,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eef3bcd51c8fcf498a384ff9399fe6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keybinds: {fileID: 11400000, guid: e9f234eb030841f47b779cd03491eab1, type: 2}
 --- !u!1 &188534637
 GameObject:
   m_ObjectHideFlags: 0
@@ -2812,6 +2814,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 93cddadd98482834a859a9ba92167681, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  keybinds: {fileID: 11400000, guid: e9f234eb030841f47b779cd03491eab1, type: 2}
 --- !u!1 &190799823
 GameObject:
   m_ObjectHideFlags: 0
@@ -5619,7 +5622,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &2142320548
 MonoBehaviour:
   m_ObjectHideFlags: 0

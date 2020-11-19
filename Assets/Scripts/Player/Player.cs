@@ -5,7 +5,6 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public InventoryObject inventory;
-
     public void Start()
     {
         //inventory.Load();

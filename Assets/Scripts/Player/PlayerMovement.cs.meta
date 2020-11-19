@@ -3,7 +3,11 @@ guid: 5ab1ec56f2a75b546a5823b2685c0fbf
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - controller: {instanceID: 0}
+  - keybinds: {fileID: 11400000, guid: e9f234eb030841f47b779cd03491eab1, type: 2}
+  - groundCheck: {instanceID: 0}
+  - playerAttack: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

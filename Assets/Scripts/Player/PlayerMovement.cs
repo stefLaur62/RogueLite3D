@@ -7,9 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
 
-    private ParameterData data;
-    public ConfigManager config;
-
+    public Keybinds keybinds;
 
     private Animator anim;
 
@@ -31,7 +29,6 @@ public class PlayerMovement : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
-        data = config.getData();
     }
 
     void FixedUpdate()
@@ -57,22 +54,22 @@ public class PlayerMovement : MonoBehaviour
         Vector3 temp = Vector3.zero;
         if (!playerAttack.isAttacking || !isGrounded)
         {
-            if (Input.GetKey(data.right))
+            if (Input.GetKey(keybinds.right))
             {
                 right = true;
                 temp += transform.right;
             }
-            if (Input.GetKey(data.left))
+            if (Input.GetKey(keybinds.left))
             {
                 left = true;
                 temp += transform.right * -1;
             }
-            if (Input.GetKey(data.forward))
+            if (Input.GetKey(keybinds.forward))
             {
                 forward = true;
                 temp += transform.forward;
             }
-            if (Input.GetKey(data.backward))
+            if (Input.GetKey(keybinds.backward))
             {
                 backward = true;
                 temp += transform.forward * -1;
@@ -81,7 +78,7 @@ public class PlayerMovement : MonoBehaviour
             {
                 walk = true;
             }
-            if (Input.GetKey(data.jump) && isGrounded)
+            if (Input.GetKey(keybinds.jump) && isGrounded)
             {
                 jump = true;
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);

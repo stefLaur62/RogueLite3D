@@ -7,22 +7,20 @@ using UnityEngine;
 
 public class ConfigManager : MonoBehaviour
 {
-    //"C:\Users\Stephen\AppData\LocalLow\DefaultCompany\RogueLite3d\Config\config.txt"
-    public ParameterData data;
-
-    private string file = "config.txt";
+    public Keybinds keybinds;
 
     void Awake()
     {
-        if (!File.Exists(GetFilePath(file)))
+        /*if (!File.Exists(GetFilePath(file)))
         {
             Directory.CreateDirectory(Application.persistentDataPath + "/Config/");
             File.Create(GetFilePath(file));
         }
-        Load();
+        Load();*/
+        keybinds.Load();
     }
 
-   
+/*   
 
     public bool Save()
     {
@@ -80,73 +78,5 @@ public class ConfigManager : MonoBehaviour
     public void SetFilename(string filename)
     {
         file = filename;
-    }
-
-    public void SetForward(KeyCode key)
-    {
-        data.forward = key;
-    }
-
-    public void SetBackward(KeyCode key)
-    {
-        data.backward = key;
-    }
-    public void SetLeft(KeyCode key)
-    {
-        data.left = key;
-    }
-    public void SetRight(KeyCode key)
-    {
-        data.right = key;
-    }
-    public void SetJump(KeyCode key)
-    {
-        data.jump = key;
-    }
-    public void SetInteract(KeyCode key)
-    {
-        data.interact = key;
-    }
-    public void SetAttack(KeyCode key)
-    {
-        data.attack = key;
-    }
-
-
-
-    public KeyCode GetForward()
-    {
-        return data.forward;
-    }
-
-    public KeyCode GetBackward()
-    {
-        return data.backward;
-    }
-    public KeyCode GetLeft()
-    {
-        return data.left;
-    }
-    public KeyCode GetRight()
-    {
-        return data.right;
-    }
-    public KeyCode GetJump()
-    {
-        return data.jump;
-    }
-    public KeyCode GetInteract()
-    {
-        return data.interact;
-    }
-
-    public KeyCode GetAttack()
-    {
-        return data.attack;
-    }
-
-    public ParameterData getData()
-    {
-        return data;
-    }
+    }*/
 }

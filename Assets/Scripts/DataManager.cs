@@ -7,8 +7,13 @@ using UnityEngine;
 public class DataManager : MonoBehaviour
 {
     public PlayerData data;
-
+    public Keybinds keybinds;
     private string file = "";
+
+    public void Awake()
+    {
+        keybinds.Load();
+    }
 
     public bool Save()
     {

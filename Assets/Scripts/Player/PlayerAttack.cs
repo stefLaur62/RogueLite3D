@@ -8,7 +8,7 @@ public class PlayerAttack : MonoBehaviour
 
     public DataManager playerData;
     public ConfigManager configData;
-    public ParameterData parameterData;
+    public Keybinds keybinds;
 
     private Animator anim;
 
@@ -16,7 +16,6 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     { 
         anim = GetComponent<Animator>();
-        parameterData = configData.data;
     }
 
     void Update()
@@ -30,7 +29,7 @@ public class PlayerAttack : MonoBehaviour
         {
             isAttacking = false;
         } 
-        else if (Input.GetKeyDown(parameterData.attack))
+        else if (Input.GetKeyDown(keybinds.attack))
         {
             SetAttackingAnimation();
             isAttacking = true;
