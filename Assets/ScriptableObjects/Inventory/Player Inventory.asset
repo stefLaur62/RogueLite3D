@@ -15,4 +15,184 @@ MonoBehaviour:
   savePath: /Inventory.Save
   database: {fileID: 11400000, guid: ae84a062de3b88f49a54c0bf59094590, type: 2}
   container:
-    items: []
+    items:
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0

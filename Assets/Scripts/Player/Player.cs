@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
 
     public void Start()
     {
-        inventory.Load();
+        //inventory.Load();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -23,7 +23,7 @@ public class Player : MonoBehaviour
 
     private void OnApplicationQuit()
     {
-        inventory.container.items.Clear();
+        inventory.container.items = new InventorySlot[30];
     }
     public void Update()
     {
