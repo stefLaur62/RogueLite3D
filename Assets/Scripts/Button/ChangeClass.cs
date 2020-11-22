@@ -9,24 +9,22 @@ public class ChangeClass : MonoBehaviour
     public Text classDescriptionUI;
     public GameObject Knight;
     public GameObject Mage;
-    public GameObject Rogue;
 
-    private int NBCLASS = 3; 
+    private int NBCLASS = 2; 
 
-    private GameObject[] classObject = new GameObject[3];
-    private string[] classNameText = { "Knight", "Mage", "Rogue" };
+    private GameObject[] classObject;
+    private string[] classNameText = { "Knight", "Mage"};
     private string[] classDescriptionText = { 
         "Attaque lente et puissante\nVitesse lente\nVitalité élevée",
-        "Attaque à distance\nVitesse moyenne\nVitalité faible",
-        "Attaque rapide\nVitesse élévée\nVitalité moyenne" };
+        "Attaque à distance\nVitalité faible"};
 
 
     // Start is called before the first frame update
     void Start()
     {
+        classObject = new GameObject[NBCLASS];
         classObject[0] = Knight;
         classObject[1] = Mage;
-        classObject[2] = Rogue;
     }
 
     // Update is called once per frame
@@ -39,24 +37,24 @@ public class ChangeClass : MonoBehaviour
     {
         currentClassId--;
         if (currentClassId < 0)
-            currentClassId = 2;
+            currentClassId = NBCLASS-1;
         ChangeCurrentClass();
     }
 
     public void ChangeRight()
     {
         currentClassId++;
-        if (currentClassId > 2)
+        if (currentClassId > NBCLASS-1)
             currentClassId = 0;
         ChangeCurrentClass();
     }
     private void ChangeCurrentClass()
     {
         classTextUI.text = classNameText[currentClassId];
-        activatePreview();
+        ActivatePreview();
         classDescriptionUI.text = classDescriptionText[currentClassId];
     }
-    private void activatePreview()
+    private void ActivatePreview()
     {
         for(int i = 0; i < NBCLASS; ++i)
         {

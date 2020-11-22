@@ -7,7 +7,6 @@ public class PlayerAttack : MonoBehaviour
 {
 
     public DataManager playerData;
-    public ConfigManager configData;
     public Keybinds keybinds;
 
     private Animator anim;

@@ -10,27 +10,20 @@ public class CreateGame : MonoBehaviour
     public Text gamename;
 
     public DataManager dataManager;
+    public GameData gameData;
     void Start()
     {
-        dataManager.Load();
+
     }
 
     public void createGame()
     {
         if (gamename.text.Length > 0)
         {
-
-            dataManager.SetFilename(gamename.text + ".txt");
-            dataManager.SetClassName(classname.text);
-            dataManager.SetGameName(gamename.text);
-
-            PlayerPrefs.SetString("gamename", gamename.text);
-
-            if (dataManager.Save())
-            {
-                SceneManager.LoadScene("Spawn", LoadSceneMode.Single);
-            }
+            gameData.gameName = gamename.text;
+            gameData.SetClass(classname.text);
+            gameData.Save();
+            SceneManager.LoadScene("Spawn", LoadSceneMode.Single);
         }
     }
-
 }

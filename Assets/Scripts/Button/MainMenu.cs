@@ -6,13 +6,11 @@ using UnityEngine.SceneManagement;
 public class MainMenu : MonoBehaviour
 {
     public Canvas mainMenu;
-    // Start is called before the first frame update
     void Start()
     {
         PlayerPrefs.DeleteAll();
     }
 
-    // Update is called once per frame
     void Update()
     {
         

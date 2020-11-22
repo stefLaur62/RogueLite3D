@@ -1360,7 +1360,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerData: {fileID: 167952534}
-  configData: {fileID: 188534639}
   keybinds: {fileID: 11400000, guid: e9f234eb030841f47b779cd03491eab1, type: 2}
   isAttacking: 0
 --- !u!114 &79228474
@@ -2770,7 +2769,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eef3bcd51c8fcf498a384ff9399fe6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keybinds: {fileID: 11400000, guid: e9f234eb030841f47b779cd03491eab1, type: 2}
 --- !u!1 &188534637
 GameObject:
   m_ObjectHideFlags: 0

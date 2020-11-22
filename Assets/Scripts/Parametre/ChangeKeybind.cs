@@ -21,9 +21,7 @@ public class ChangeKeybind : MonoBehaviour
     {
         canChange = false;
 
-/*        configManager.SetFilename("config.txt");
 
-        configManager.Load();*/
         LoadKey();
     }
 
