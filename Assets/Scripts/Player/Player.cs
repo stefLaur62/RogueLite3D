@@ -5,6 +5,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     public InventoryObject inventory;
+    public GameObject inventoryCanvas;
+    public Keybinds keybinds;
     public void Start()
     {
         //inventory.Load();
@@ -24,8 +26,10 @@ public class Player : MonoBehaviour
     {
         inventory.container.items = new InventorySlot[30];
     }
+
     public void Update()
     {
+        //change save / load later
         if (Input.GetKeyDown(KeyCode.Space))
         {
             inventory.Save();
@@ -33,6 +37,10 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             inventory.Load();
+        }
+        if (Input.GetKeyDown(keybinds.inventory))
+        {
+            inventoryCanvas.SetActive(!inventoryCanvas.activeSelf);
         }
     }
 }

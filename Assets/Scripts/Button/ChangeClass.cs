@@ -15,7 +15,7 @@ public class ChangeClass : MonoBehaviour
     private GameObject[] classObject;
     private string[] classNameText = { "Knight", "Mage"};
     private string[] classDescriptionText = { 
-        "Attaque lente et puissante\nVitesse lente\nVitalité élevée",
+        "Attaque lente et puissante\nVitalité élevée",
         "Attaque à distance\nVitalité faible"};
 
 

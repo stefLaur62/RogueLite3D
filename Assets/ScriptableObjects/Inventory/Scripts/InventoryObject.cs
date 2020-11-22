@@ -90,6 +90,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
             JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
             file.Close();
         }
+        SetDatase();
     }
     public void OnEnable()
     {

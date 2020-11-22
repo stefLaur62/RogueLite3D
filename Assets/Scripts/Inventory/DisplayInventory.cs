@@ -37,6 +37,9 @@ public class DisplayInventory : MonoBehaviour
             if (slot.Value.id >= 0)
             {
                 //null value?
+                Debug.Log("slot:"+slot);
+                Debug.Log("slot v:" + slot.Value);
+                Debug.Log("slot.Value.item:" + slot.Value.item);
                 slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = inventory.database.getItem[slot.Value.item.id].uiDisplay;
                 slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
                 slot.Key.transform.GetComponentInChildren<TextMeshProUGUI>().text = slot.Value.amount == 1 ? "" : slot.Value.amount.ToString("n0");
