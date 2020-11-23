@@ -12,9 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07a99329e0da5a5459cb163bb6f46e10, type: 3}
   m_Name: Shield 1
   m_EditorClassIdentifier: 
-  prefab: {fileID: 6376588949474534035, guid: f6953f1312f5d964f998d354a64cf1dd, type: 3}
+  id: 0
+  uiDisplay: {fileID: 21300000, guid: f73f68fe6815f5548a6c2a61b9e49add, type: 3}
   type: 1
   description: 
-  isStackable: 0
-  atkBonus: 0
-  defenceBonus: 10
+  buffs: []

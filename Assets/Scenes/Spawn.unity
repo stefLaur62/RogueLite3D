@@ -1375,6 +1375,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 21cb2dc7eef04a447a43dd382651b87c, type: 2}
+  inventoryCanvas: {fileID: 2142320547}
+  keybinds: {fileID: 11400000, guid: e9f234eb030841f47b779cd03491eab1, type: 2}
 --- !u!1 &79230976
 GameObject:
   m_ObjectHideFlags: 0

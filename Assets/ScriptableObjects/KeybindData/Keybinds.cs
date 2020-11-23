@@ -16,7 +16,7 @@ public class Keybinds : ScriptableObject
     public KeyCode jump = KeyCode.Space;
     public KeyCode attack = KeyCode.Mouse0;
     public KeyCode interact = KeyCode.E;
-    public KeyCode sprint = KeyCode.LeftShift;
+    public KeyCode walk = KeyCode.LeftShift;
     public KeyCode block = KeyCode.Mouse1;
     public KeyCode inventory = KeyCode.I;
 
@@ -63,6 +63,9 @@ public class Keybinds : ScriptableObject
                 break;
             case "Attack":
                 attack = key;
+                break;
+            case "Walk":
+                walk = key;
                 break;
         }
     }

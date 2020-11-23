@@ -51,6 +51,9 @@ public class ChangeKeybind : MonoBehaviour
             case "Attack":
                 keybind.text = keybinds.attack.ToString();
                 break;
+            case "Walk":
+                keybind.text = keybinds.walk.ToString();
+                break;
         }
     }
 
