@@ -19,9 +19,8 @@ public class ChangeKeybind : MonoBehaviour
 
     void Start()
     {
+        Debug.Log("Start");
         canChange = false;
-
-
         LoadKey();
     }
 
@@ -31,7 +30,6 @@ public class ChangeKeybind : MonoBehaviour
         {
             case "Forward":
                 keybind.text = keybinds.forward.ToString();
-
                 break;
             case "Backward":
                 keybind.text = keybinds.backward.ToString();
@@ -53,6 +51,12 @@ public class ChangeKeybind : MonoBehaviour
                 break;
             case "Walk":
                 keybind.text = keybinds.walk.ToString();
+                break;
+            case "Block":
+                keybind.text = keybinds.block.ToString();
+                break;
+            case "Inventory":
+                keybind.text = keybinds.inventory.ToString();
                 break;
         }
     }

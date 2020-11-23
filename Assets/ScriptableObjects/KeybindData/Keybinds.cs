@@ -67,6 +67,13 @@ public class Keybinds : ScriptableObject
             case "Walk":
                 walk = key;
                 break;
+            case "Block":
+                block = key;
+                break;
+            case "Inventory":
+                inventory = key;
+                break;
         }
+        Save();
     }
 }
