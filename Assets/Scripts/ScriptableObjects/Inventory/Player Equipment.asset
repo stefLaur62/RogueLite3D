@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af2cdfd0fc0e6a745b1ed9f19af8b4bb, type: 3}
+  m_Name: Player Equipment
+  m_EditorClassIdentifier: 
+  savePath: /Equipment.save
+  database: {fileID: 11400000, guid: ae84a062de3b88f49a54c0bf59094590, type: 2}
+  container:
+    items:
+    - allowedItems: 01000000
+      parent: {fileID: 0}
+      id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
+    - allowedItems: 0200000003000000
+      parent: {fileID: 0}
+      id: 2
+      item:
+        name: Sword 1
+        id: 2
+        buffs:
+        - attributes: 0
+          value: 8
+          min: 1
+          max: 10
+        - attributes: 1
+          value: 1
+          min: 1
+          max: 10
+        - attributes: 2
+          value: 3
+          min: 1
+          max: 10
+      amount: 1
+    - allowedItems: 04000000
+      parent: {fileID: 0}
+      id: -1
+      item:
+        name: 
+        id: -1
+        buffs: []
+      amount: 0
+    - allowedItems: 0500000006000000
+      parent: {fileID: 0}
+      id: -1
+      item:
+        name: 
+        id: 0
+        buffs: []
+      amount: 0
