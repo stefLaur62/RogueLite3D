@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public MouseItem mouseItem = new MouseItem();
     public InventoryObject inventory;
     public GameObject inventoryCanvas;
     public Keybinds keybinds;
@@ -18,14 +17,15 @@ public class Player : MonoBehaviour
         var item = other.GetComponent<GroundItem>();
         if (item)
         {
-            inventory.AddItem(new Item(item.item), 1);
-            Destroy(other.gameObject);
+            if(inventory.AddItem(new Item(item.item), 1))
+                Destroy(other.gameObject);
         }
     }
 
     private void OnApplicationQuit()
     {
-        inventory.container.items = new InventorySlot[30];
+        inventory.container.Clear();
+        inventory.container.Clear();
     }
 
     public void Update()
