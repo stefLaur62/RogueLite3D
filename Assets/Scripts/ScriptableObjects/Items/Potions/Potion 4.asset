@@ -12,8 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44840f2001016444fb09b143b6907540, type: 3}
   m_Name: Potion 4
   m_EditorClassIdentifier: 
-  id: 14
   uiDisplay: {fileID: 21300000, guid: f8e3ec112e9b1bb49939af1e795d2c3f, type: 3}
+  stackable: 1
   type: 0
   description: 
-  buffs: []
+  data:
+    name: 
+    id: 14
+    buffs: []

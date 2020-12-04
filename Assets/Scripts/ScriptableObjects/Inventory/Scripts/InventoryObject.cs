@@ -17,7 +17,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         if (EmptySlotCount <= 0)
             return false;
         InventorySlot slot = FindItemOnInventory(item);
-        if(!database.getItem[item.id].stackable || slot == null)
+        if(!database.items[item.id].stackable || slot == null)
         {
             SetEmptySlot(item, amount);
             return true;
@@ -135,17 +135,3 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         container.Clear();
     }
 }
-
-[System.Serializable]
-public class Inventory
-{
-    public InventorySlot[] items = new InventorySlot[30];
-    public void Clear()
-    {
-        for (int i = 0; i < items.Length; i++)
-        {
-            items[i].RemoveItem();
-        }
-    }
-}
-

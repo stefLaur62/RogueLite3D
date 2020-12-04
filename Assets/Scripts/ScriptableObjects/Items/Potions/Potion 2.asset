@@ -12,9 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 44840f2001016444fb09b143b6907540, type: 3}
   m_Name: Potion 2
   m_EditorClassIdentifier: 
-  id: 12
   uiDisplay: {fileID: 21300000, guid: 95ec8e7db0db95f4d980ac6a8bf713c5, type: 3}
+  stackable: 1
   type: 0
   description: 
-  isStackable: 0
-  restoreHealthValue: 50
+  data:
+    name: 
+    id: 12
+    buffs: []

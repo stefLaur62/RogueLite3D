@@ -17,46 +17,26 @@ MonoBehaviour:
   container:
     items:
     - allowedItems: 01000000
-      parent: {fileID: 0}
-      id: -1
-      item:
-        name: 
-        id: 0
-        buffs: []
-      amount: 0
-    - allowedItems: 0200000003000000
-      parent: {fileID: 0}
-      id: 2
-      item:
-        name: Sword 1
-        id: 2
-        buffs:
-        - attributes: 0
-          value: 8
-          min: 1
-          max: 10
-        - attributes: 1
-          value: 1
-          min: 1
-          max: 10
-        - attributes: 2
-          value: 3
-          min: 1
-          max: 10
-      amount: 1
-    - allowedItems: 04000000
-      parent: {fileID: 0}
-      id: -1
       item:
         name: 
         id: -1
         buffs: []
       amount: 0
+    - allowedItems: 0200000003000000
+      item:
+        name: Sword 1
+        id: 2
+        buffs: []
+      amount: 1
+    - allowedItems: 04000000
+      item:
+        name: Armor 4
+        id: 9
+        buffs: []
+      amount: 1
     - allowedItems: 0500000006000000
-      parent: {fileID: 0}
-      id: -1
       item:
         name: 
-        id: 0
+        id: -1
         buffs: []
       amount: 0

@@ -27,22 +27,13 @@ public class PlayerAttack : MonoBehaviour
         if (isAttacking && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.80)
         {
             isAttacking = false;
+            anim.SetBool("isAttacking",false);
         } 
         else if (Input.GetKeyDown(keybinds.attack))
         {
             SetAttackingAnimation();
             isAttacking = true;
-            /*RaycastHit2D hit = Physics2D.Raycast(attackStart.position, (attackEnd.position - attackStart.position).normalized) ;
-            Debug.DrawRay(attackStart.position, (attackEnd.position - attackStart.position).normalized, Color.yellow,50);
-            if (hit == true && hit.distance < 1 && hit.transform.gameObject.tag=="Enemy")
-            {
-
-                Health enemy = hit.collider.GetComponent<Health>();
-                if (enemy != null) 
-                {
-                    enemy.currentHealth -= 10f; //change damage taken
-                }
-            }*/
+            anim.SetBool("isAttacking", true);
         }
     }
 
@@ -50,12 +41,17 @@ public class PlayerAttack : MonoBehaviour
     {
         if (anim != null)
         {
-            anim.SetTrigger("isAttacking");
+            //anim.SetTrigger("isAttacking");
         }
         else
         {
             Debug.LogError("No animation loaded");
         }
     }
-
+   
+    public void OnSwordHit(Collider other)
+    {
+        anim.SetBool("isAttacking", false);
+        isAttacking = false;
+    }
 }

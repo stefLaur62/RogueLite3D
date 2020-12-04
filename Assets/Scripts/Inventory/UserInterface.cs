@@ -36,10 +36,6 @@ public abstract class UserInterface : MonoBehaviour
         {
             if (slot.Value.item.id >= 0)
             {
-                //null value?
-                Debug.Log("slot:" + slot);
-                Debug.Log("slot v:" + slot.Value);
-                Debug.Log("slot.Value.item:" + slot.Value.item);
                 slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().sprite = slot.Value.ItemObject.uiDisplay;
                 slot.Key.transform.GetChild(0).GetComponentInChildren<Image>().color = new Color(1, 1, 1, 1);
                 slot.Key.transform.GetComponentInChildren<TextMeshProUGUI>().text = slot.Value.amount == 1 ? "" : slot.Value.amount.ToString("n0");
@@ -80,17 +76,7 @@ public abstract class UserInterface : MonoBehaviour
 
     public void OnDragStart(GameObject obj)
     {
-        var dragObj = new GameObject();
-        var rt = dragObj.AddComponent<RectTransform>();
-        rt.sizeDelta = new Vector2(60, 60);
-        dragObj.transform.SetParent(transform.parent);
-        if (slotsOnInterface[obj].item.id >= 0)
-        {
-            var img = dragObj.AddComponent<Image>();
-            img.sprite = slotsOnInterface[obj].ItemObject.uiDisplay;
-            img.raycastTarget = false;
-        }
-        MouseData.tempItem = dragObj;
+        MouseData.tempItem = createTempItem(obj);
     }
 
     public GameObject createTempItem(GameObject obj)
@@ -131,11 +117,4 @@ public abstract class UserInterface : MonoBehaviour
             MouseData.tempItem.GetComponent<RectTransform>().position = Input.mousePosition;
     }
     
-}
-
-public static class MouseData
-{
-    public static UserInterface interfaceMouseIsOver;
-    public static GameObject tempItem;
-    public static GameObject slotHover;
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class InventorySlot
 {
     public ItemType[] allowedItems = new ItemType[0];
+    [System.NonSerialized]
     public UserInterface parent;
     public Item item;
     public int amount;
@@ -16,7 +17,7 @@ public class InventorySlot
         get
         {
             if (item.id >= 0)
-                return parent.inventory.database.getItem[item.id];
+                return parent.inventory.database.items[item.id];
             return null;
         }
     }
