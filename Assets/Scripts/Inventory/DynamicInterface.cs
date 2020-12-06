@@ -5,11 +5,16 @@ using UnityEngine.EventSystems;
 
 public class DynamicInterface : UserInterface
 {
-    public int X_START;
-    public int Y_START;
-    public int X_SPACE_BETWEEEN_ITEMS;
-    public int Y_SPACE_BETWEEEN_ITEMS;
-    public int NUMBER_OF_COLUMN;
+    [SerializeField]
+    private int X_START;
+    [SerializeField]
+    private int Y_START;
+    [SerializeField]
+    private int X_SPACE_BETWEEEN_ITEMS;
+    [SerializeField]
+    private int Y_SPACE_BETWEEEN_ITEMS;
+    [SerializeField]
+    private int NUMBER_OF_COLUMN;
 
     public GameObject inventoryPrefab;
 

@@ -11,11 +11,15 @@ public class PlayerMovement : MonoBehaviour
 
     private Animator anim;
 
-    private float speed = 7f;
+    [SerializeField]
+    private float speed = 6.5f;
+    [SerializeField]
     private float walkSpeed = 3f;
     private float diagSpeed = 0.6f;
-    public float gravity = -17f;
-    public float jumpHeight = 1f;
+    [SerializeField]
+    private float gravity = -17f;
+    [SerializeField]
+    private float jumpHeight = 1f;
 
     public Vector3 velocity;
 
