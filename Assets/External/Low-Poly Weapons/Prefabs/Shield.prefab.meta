@@ -4,9 +4,8 @@ labels:
 - Weapon
 - Melee
 - Shield
-timeCreated: 1460068412
-licenseType: Store
-NativeFormatImporter:
+PrefabImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

@@ -6,9 +6,8 @@ labels:
 - Arrow
 - Crossbow
 - Bow
-timeCreated: 1460068321
-licenseType: Store
-NativeFormatImporter:
+PrefabImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

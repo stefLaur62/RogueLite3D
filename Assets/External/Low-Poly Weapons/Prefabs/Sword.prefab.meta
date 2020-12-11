@@ -4,9 +4,8 @@ labels:
 - Weapon
 - Melee
 - Sword
-timeCreated: 1460068415
-licenseType: Store
-NativeFormatImporter:
+PrefabImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

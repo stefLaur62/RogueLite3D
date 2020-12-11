@@ -6,9 +6,8 @@ labels:
 - Crossbow
 - Arrow
 - Ranged
-timeCreated: 1460068325
-licenseType: Store
-NativeFormatImporter:
+PrefabImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 

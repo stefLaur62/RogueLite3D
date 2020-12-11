@@ -3,9 +3,8 @@ guid: a7ef2398046494d0cadc6b5c28cfa84f
 labels:
 - Weapon
 - Arrow
-timeCreated: 1460068173
-licenseType: Store
-NativeFormatImporter:
+PrefabImporter:
+  externalObjects: {}
   userData: 
   assetBundleName: 
   assetBundleVariant: 
