@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 449656}
   - component: {fileID: 3390228}
   - component: {fileID: 2325352}
-  - component: {fileID: 3007675886524125269}
+  - component: {fileID: 9100957396732044665}
   m_Layer: 0
   m_Name: SM_Env_Cliff_01
   m_TagString: Untagged
@@ -82,8 +82,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!65 &3007675886524125269
-BoxCollider:
+--- !u!64 &9100957396732044665
+MeshCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,6 +92,7 @@ BoxCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 25.254246, y: 14.058813, z: 24.638868}
-  m_Center: {x: 0.36298943, y: 7.5251026, z: 0.075653076}
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 2d7180283934ac449960ea8927ce33b9, type: 3}
