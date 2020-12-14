@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    private PlayerActionControls playerActionControls;
+
     public CharacterController controller;
 
     public Keybinds keybinds;
@@ -32,12 +34,26 @@ public class PlayerMovement : MonoBehaviour
     public PlayerAttack playerAttack;
     void Start()
     {
-        anim = GetComponent<Animator>();
     }
 
     void FixedUpdate()
     {
         Move();
+    }
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+        playerActionControls = new PlayerActionControls();
+    }
+
+    private void OnEnable()
+    {
+        playerActionControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerActionControls.Disable();
     }
 
     private void Move()
@@ -58,31 +74,34 @@ public class PlayerMovement : MonoBehaviour
         Vector3 temp = Vector3.zero;
         if (!playerAttack.isAttacking || !isGrounded)
         {
-            if (Input.GetKey(keybinds.right))
+            Vector2 movementInput = playerActionControls.Player.Move.ReadValue<Vector2>();
+            float jumpInput = playerActionControls.Player.Jump.ReadValue<float>();
+            if (movementInput.x > 0)
             {
                 right = true;
+                Debug.Log("Right");
                 temp += transform.right;
             }
-            if (Input.GetKey(keybinds.left))
+            if (movementInput.x < 0)
             {
                 left = true;
                 temp += transform.right * -1;
             }
-            if (Input.GetKey(keybinds.forward))
+            if (movementInput.y > 0)
             {
                 forward = true;
                 temp += transform.forward;
             }
-            if (Input.GetKey(keybinds.backward))
+            if (movementInput.y < 0)
             {
                 backward = true;
                 temp += transform.forward * -1;
             }
-            if (Input.GetKey(KeyCode.LeftShift))
+            /*if (Input.GetKey(KeyCode.LeftShift))
             {
                 walk = true;
-            }
-            if (Input.GetKey(keybinds.jump) && isGrounded)
+            }*/
+            if (jumpInput > 0 && isGrounded)
             {
                 jump = true;
                 velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);

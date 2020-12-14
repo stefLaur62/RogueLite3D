@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 405988}
   - component: {fileID: 3382312}
   - component: {fileID: 2347594}
-  - component: {fileID: 1187414953818822522}
+  - component: {fileID: 3159122883163311161}
   m_Layer: 0
   m_Name: SM_Env_MountainGrass_01
   m_TagString: Untagged
@@ -82,8 +82,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1187414953818822522
-MeshCollider:
+--- !u!65 &3159122883163311161
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -92,7 +92,6 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: 10e8bb17796014b4aab2efca793968c0, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 37.182762, y: 15.115649, z: 37.9863}
+  m_Center: {x: 0.24732971, y: 7.5578246, z: 0.15039635}

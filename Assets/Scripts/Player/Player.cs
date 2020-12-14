@@ -31,7 +31,7 @@ public class Player : MonoBehaviour
     public void Update()
     {
         //change save / load later
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             inventory.Save();
         }
@@ -42,6 +42,6 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(keybinds.inventory))
         {
             inventoryCanvas.SetActive(!inventoryCanvas.activeSelf);
-        }
+        }*/
     }
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
+    private PlayerActionControls playerActionControls;
+
 
     public DataManager playerData;
     public Keybinds keybinds;
@@ -15,6 +17,7 @@ public class PlayerAttack : MonoBehaviour
     void Start()
     { 
         anim = GetComponent<Animator>();
+
     }
 
     void Update()
@@ -22,14 +25,32 @@ public class PlayerAttack : MonoBehaviour
         Attack();
     }
 
+    private void Awake()
+    {
+        anim = GetComponent<Animator>();
+        playerActionControls = new PlayerActionControls();
+    }
+
+    private void OnEnable()
+    {
+        playerActionControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerActionControls.Disable();
+    }
+
     public void Attack()
     {
+        float attackInput = playerActionControls.Player.Attack.ReadValue<float>();
+
         if (isAttacking && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.80)
         {
             isAttacking = false;
             anim.SetBool("isAttacking",false);
         } 
-        else if (Input.GetKeyDown(keybinds.attack))
+        else if (attackInput > 0)
         {
             SetAttackingAnimation();
             isAttacking = true;

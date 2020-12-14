@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class MouseLook : MonoBehaviour
 {
+    private PlayerActionControls playerActionControls;
+
     [SerializeField]
-    private float mouseSensitivity = 300f;
+    private float mouseSensitivity = 200f;
 
     public Transform playerBody;
 
@@ -18,9 +20,26 @@ public class MouseLook : MonoBehaviour
 
     void FixedUpdate()
     {
-        float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.fixedDeltaTime;
-        float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.fixedDeltaTime;
+        float mouseInput = playerActionControls.Player.MouseLook.ReadValue<float>();
+        if (mouseInput < -1)
+            mouseInput = -1;
+        else if (mouseInput > 1)
+            mouseInput = 1;
+        playerBody.Rotate(Vector3.up * mouseInput * mouseSensitivity * Time.fixedDeltaTime);
+    }
 
-        playerBody.Rotate(Vector3.up * mouseX);
+    private void Awake()
+    {
+        playerActionControls = new PlayerActionControls();
+    }
+
+    private void OnEnable()
+    {
+        playerActionControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerActionControls.Disable();
     }
 }
