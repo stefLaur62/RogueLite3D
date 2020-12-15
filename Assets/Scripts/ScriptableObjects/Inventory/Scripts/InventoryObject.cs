@@ -96,22 +96,22 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
 
     }
 
-    public void Save()
+    public void Save(string gameName)
     {
-        Debug.Log(string.Concat(Application.persistentDataPath, savePath));
+        Debug.Log(string.Concat(Application.persistentDataPath, gameName ,savePath));
         string saveData = JsonUtility.ToJson(this, true);
-        FileStream file = File.Create(string.Concat(Application.persistentDataPath,savePath));
+        FileStream file = File.Create(string.Concat(Application.persistentDataPath, gameName, savePath));
         BinaryFormatter bf = new BinaryFormatter();
         bf.Serialize(file, saveData);
         file.Close();
     }
 
-    public void Load()
+    public void Load(string gameName)
     {
-        if(File.Exists(string.Concat(Application.persistentDataPath, savePath)))
+        if(File.Exists(string.Concat(Application.persistentDataPath, gameName, savePath)))
         {
             BinaryFormatter bf = new BinaryFormatter(); 
-            FileStream file = File.Open(string.Concat(Application.persistentDataPath, savePath),FileMode.Open);
+            FileStream file = File.Open(string.Concat(Application.persistentDataPath, gameName, savePath),FileMode.Open);
             JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
             file.Close();
         }

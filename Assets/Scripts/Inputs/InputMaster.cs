@@ -65,6 +65,14 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
+                },
+                {
+                    ""name"": ""SaveGame"",
+                    ""type"": ""Button"",
+                    ""id"": ""c67b50fd-be00-4595-a26a-73b6836cef48"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
                 }
             ],
             ""bindings"": [
@@ -441,6 +449,39 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""action"": ""Walk"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""67d6128b-337f-4239-85d9-37348c641b7f"",
+                    ""path"": ""<Keyboard>/p"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SaveGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""1b005817-2614-4ac6-ba67-ec6fee96e12d"",
+                    ""path"": ""<Gamepad>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SaveGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e76cdb7a-7a61-44b1-a6b5-6c1a7bb55cc9"",
+                    ""path"": ""<XInputController>/select"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""SaveGame"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -455,6 +496,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         m_Player_MouseLook = m_Player.FindAction("MouseLook", throwIfNotFound: true);
         m_Player_OpenInventory = m_Player.FindAction("OpenInventory", throwIfNotFound: true);
         m_Player_Walk = m_Player.FindAction("Walk", throwIfNotFound: true);
+        m_Player_SaveGame = m_Player.FindAction("SaveGame", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -510,6 +552,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_MouseLook;
     private readonly InputAction m_Player_OpenInventory;
     private readonly InputAction m_Player_Walk;
+    private readonly InputAction m_Player_SaveGame;
     public struct PlayerActions
     {
         private @PlayerActionControls m_Wrapper;
@@ -520,6 +563,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         public InputAction @MouseLook => m_Wrapper.m_Player_MouseLook;
         public InputAction @OpenInventory => m_Wrapper.m_Player_OpenInventory;
         public InputAction @Walk => m_Wrapper.m_Player_Walk;
+        public InputAction @SaveGame => m_Wrapper.m_Player_SaveGame;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -547,6 +591,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Walk.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWalk;
                 @Walk.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWalk;
                 @Walk.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWalk;
+                @SaveGame.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSaveGame;
+                @SaveGame.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSaveGame;
+                @SaveGame.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSaveGame;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -569,6 +616,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Walk.started += instance.OnWalk;
                 @Walk.performed += instance.OnWalk;
                 @Walk.canceled += instance.OnWalk;
+                @SaveGame.started += instance.OnSaveGame;
+                @SaveGame.performed += instance.OnSaveGame;
+                @SaveGame.canceled += instance.OnSaveGame;
             }
         }
     }
@@ -581,5 +631,6 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         void OnMouseLook(InputAction.CallbackContext context);
         void OnOpenInventory(InputAction.CallbackContext context);
         void OnWalk(InputAction.CallbackContext context);
+        void OnSaveGame(InputAction.CallbackContext context);
     }
 }

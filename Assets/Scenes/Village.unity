@@ -2869,8 +2869,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: 4b8d816162b29554d8d109fe64ef3846, type: 2}
-  playerInventory: {fileID: 11400000, guid: 21cb2dc7eef04a447a43dd382651b87c, type: 2}
-  equipmentInventory: {fileID: 11400000, guid: 32cd860aab962cf4aa62f75b80254ee7, type: 2}
 --- !u!4 &186460645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 415022, guid: 2b1cd4ec8dfee7041b5bc5767613d249,

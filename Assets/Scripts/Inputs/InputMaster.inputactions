@@ -52,6 +52,14 @@
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
+                },
+                {
+                    "name": "SaveGame",
+                    "type": "Button",
+                    "id": "c67b50fd-be00-4595-a26a-73b6836cef48",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
                 }
             ],
             "bindings": [
@@ -426,6 +434,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "Walk",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "67d6128b-337f-4239-85d9-37348c641b7f",
+                    "path": "<Keyboard>/p",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SaveGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "1b005817-2614-4ac6-ba67-ec6fee96e12d",
+                    "path": "<Gamepad>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SaveGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "e76cdb7a-7a61-44b1-a6b5-6c1a7bb55cc9",
+                    "path": "<XInputController>/select",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "SaveGame",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

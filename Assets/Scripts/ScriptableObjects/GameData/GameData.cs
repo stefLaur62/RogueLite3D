@@ -18,22 +18,46 @@ public class GameData : ScriptableObject
 
     public void Save()
     {
-        string saveData = JsonUtility.ToJson(this, true);
-        FileStream file = File.Create(string.Concat(Application.persistentDataPath, savePath));
-        BinaryFormatter bf = new BinaryFormatter();
-        bf.Serialize(file, saveData);
-        file.Close();
+        if (!Directory.Exists(string.Concat(Application.persistentDataPath, gameName)))
+            Directory.CreateDirectory(string.Concat(Application.persistentDataPath, "/", gameName));
+        if (gameName.Length < 1)
+        {
+            Debug.LogError("Can't save: No GameName found!");
+        }
+        else
+        {
+            string saveData = JsonUtility.ToJson(this, true);
+            FileStream file = File.Create(string.Concat(Application.persistentDataPath, "/", gameName, savePath));
+            BinaryFormatter bf = new BinaryFormatter();
+            bf.Serialize(file, saveData);
+            file.Close();
+        }
     }
 
     public void Load()
     {
-        if (File.Exists(string.Concat(Application.persistentDataPath, savePath)))
+        if (gameName.Length > 0)
         {
-            BinaryFormatter bf = new BinaryFormatter();
-            FileStream file = File.Open(string.Concat(Application.persistentDataPath, savePath), FileMode.Open);
-            JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
-            file.Close();
+            if(!Directory.Exists(string.Concat(Application.persistentDataPath, gameName)))
+            {
+                Directory.CreateDirectory(string.Concat(Application.persistentDataPath, "/", gameName));
+            }
+            if(File.Exists(string.Concat(Application.persistentDataPath, savePath)))
+            {
+                BinaryFormatter bf = new BinaryFormatter();
+                FileStream file = File.Open(string.Concat(Application.persistentDataPath, "/", gameName, savePath), FileMode.Open);
+                JsonUtility.FromJsonOverwrite(bf.Deserialize(file).ToString(), this);
+                file.Close();
+            } else
+            {
+                Debug.LogError("File error: file not found can't load");
+            }
         }
+        else
+        {
+            Debug.LogError("Error: No game Name!");
+        }
+
     }
     public void SetClass(string text)
     {
