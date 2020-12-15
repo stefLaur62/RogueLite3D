@@ -4,12 +4,28 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private PlayerActionControls playerActionControls;
+
     public InventoryObject inventory;
     public GameObject inventoryCanvas;
     public Keybinds keybinds;
     public void Start()
     {
         //inventory.Load();
+    }
+    private void Awake()
+    {
+        playerActionControls = new PlayerActionControls();
+    }
+
+    private void OnEnable()
+    {
+        playerActionControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerActionControls.Disable();
     }
 
     public void OnTriggerEnter(Collider other)
@@ -30,6 +46,8 @@ public class Player : MonoBehaviour
 
     public void Update()
     {
+        float inventoryInput = playerActionControls.Player.OpenInventory.ReadValue<float>();
+
         //change save / load later
         /*if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -38,10 +56,10 @@ public class Player : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Return))
         {
             inventory.Load();
-        }
-        if (Input.GetKeyDown(keybinds.inventory))
+        }*/
+        if (inventoryInput > 0)
         {
             inventoryCanvas.SetActive(!inventoryCanvas.activeSelf);
-        }*/
+        }
     }
 }

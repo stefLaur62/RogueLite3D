@@ -147,9 +147,9 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 42314858}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.95238096, y: 0.95238096, z: 0.95238096}
   m_Children:
   - {fileID: 322287646}
   - {fileID: 1363342234}
@@ -162,8 +162,8 @@ Transform:
   - {fileID: 186460645}
   - {fileID: 1292805825}
   - {fileID: 1437061416}
-  m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_Father: {fileID: 1805316671}
+  m_RootOrder: 264
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &42775324
 PrefabInstance:
@@ -2868,6 +2868,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9eef3bcd51c8fcf498a384ff9399fe6c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gameData: {fileID: 11400000, guid: 4b8d816162b29554d8d109fe64ef3846, type: 2}
+  playerInventory: {fileID: 11400000, guid: 21cb2dc7eef04a447a43dd382651b87c, type: 2}
+  equipmentInventory: {fileID: 11400000, guid: 32cd860aab962cf4aa62f75b80254ee7, type: 2}
 --- !u!4 &186460645 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 415022, guid: 2b1cd4ec8dfee7041b5bc5767613d249,
@@ -6132,6 +6135,26 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f0d166010146cdc4eb7c784d54eda812, type: 3}
+--- !u!1 &1967244175 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2040890208830866357, guid: 635228aeaed8f0541b52f472b278b69a,
+    type: 3}
+  m_PrefabInstance: {fileID: 8964861672232529758}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1967244179
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1967244175}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 1c9beba456e18d94e84c0cca511e93ce, type: 3}
 --- !u!4 &1994316404 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 480658, guid: f0d166010146cdc4eb7c784d54eda812,

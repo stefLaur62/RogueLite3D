@@ -1608,7 +1608,7 @@ GameObject:
   - component: {fileID: 2040890207015636297}
   - component: {fileID: 2040890207012230875}
   - component: {fileID: 2040890207013236817}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Bld_StairsLarge_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -13258,7 +13258,7 @@ GameObject:
   - component: {fileID: 2040890207878943368}
   - component: {fileID: 2040890207877921748}
   - component: {fileID: 7750720454405165699}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Prop_Plinth_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -16274,7 +16274,7 @@ GameObject:
   - component: {fileID: 2040890208168045915}
   - component: {fileID: 2040890208166737609}
   - component: {fileID: 2040890208165597251}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Bld_StairsLarge_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -19659,7 +19659,7 @@ GameObject:
   - component: {fileID: 2040890208457637097}
   - component: {fileID: 2040890208454834409}
   - component: {fileID: 2040890208455827315}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Bld_Castle_Tower_Base_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -20974,7 +20974,8 @@ GameObject:
   - component: {fileID: 2040890208559539189}
   - component: {fileID: 2040890208562930437}
   - component: {fileID: 2040890208561859161}
-  m_Layer: 0
+  - component: {fileID: 3517557083758456567}
+  m_Layer: 8
   m_Name: SM_Prop_Plinth_04
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -21044,6 +21045,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &3517557083758456567
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040890208559645405}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: bc433f983f2572e48b1ef81f3c091130, type: 3}
 --- !u!1 &2040890208563374996
 GameObject:
   m_ObjectHideFlags: 0
@@ -22542,7 +22557,7 @@ GameObject:
   - component: {fileID: 2040890208707160180}
   - component: {fileID: 2040890208708556026}
   - component: {fileID: 2040890208709388082}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Bld_StairsLarge_Corner_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -23934,7 +23949,7 @@ GameObject:
   - component: {fileID: 2040890208847694229}
   - component: {fileID: 2040890208844895515}
   - component: {fileID: 2040890208845727443}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Bld_StairsLarge_Corner_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25320,7 +25335,8 @@ GameObject:
   - component: {fileID: 2040890209016412599}
   - component: {fileID: 2040890209015002329}
   - component: {fileID: 6004620587325919977}
-  m_Layer: 0
+  - component: {fileID: 9173565692003960757}
+  m_Layer: 8
   m_Name: SM_Prop_Plinth_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -25402,6 +25418,20 @@ MeshCollider:
   m_Enabled: 1
   serializedVersion: 4
   m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 65746b365cc7dba438ee73c4fbb30c95, type: 3}
+--- !u!64 &9173565692003960757
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2040890209013293073}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 4300000, guid: 65746b365cc7dba438ee73c4fbb30c95, type: 3}
 --- !u!1 &2040890209018307000

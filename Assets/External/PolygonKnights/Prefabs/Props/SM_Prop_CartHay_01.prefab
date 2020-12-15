@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 2381044}
   - component: {fileID: 1158800105594510167}
   - component: {fileID: 3991473563991084546}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: SM_Prop_CartHay_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}

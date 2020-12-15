@@ -76,10 +76,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Vector2 movementInput = playerActionControls.Player.Move.ReadValue<Vector2>();
             float jumpInput = playerActionControls.Player.Jump.ReadValue<float>();
+
             if (movementInput.x > 0)
             {
                 right = true;
-                Debug.Log("Right");
                 temp += transform.right;
             }
             if (movementInput.x < 0)
@@ -97,10 +97,10 @@ public class PlayerMovement : MonoBehaviour
                 backward = true;
                 temp += transform.forward * -1;
             }
-            /*if (Input.GetKey(KeyCode.LeftShift))
+            if (playerActionControls.Player.Walk.ReadValue<float>() > 0)
             {
                 walk = true;
-            }*/
+            }
             if (jumpInput > 0 && isGrounded)
             {
                 jump = true;
