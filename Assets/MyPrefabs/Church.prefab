@@ -9984,7 +9984,6 @@ GameObject:
   - component: {fileID: 5359365508396999937}
   - component: {fileID: 5359365508395915431}
   - component: {fileID: 6597065826019940483}
-  - component: {fileID: 2505476265280081903}
   m_Layer: 0
   m_Name: SM_Prop_Gravestone_17
   m_TagString: Untagged
@@ -10056,19 +10055,6 @@ MeshRenderer:
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!65 &6597065826019940483
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5359365508393675233}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.48212487, y: 1.3274398, z: 0.16182078}
-  m_Center: {x: 0.0000036035756, y: 0.663718, z: 0.014259771}
---- !u!65 &2505476265280081903
 BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
