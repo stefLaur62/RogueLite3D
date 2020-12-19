@@ -410,7 +410,7 @@ Animator:
   m_Controller: {fileID: 9100000, guid: ca2c3224ecb553d499ec72bc53f97a32, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 0
+  m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
@@ -1427,8 +1427,8 @@ GameObject:
   - component: {fileID: 79228474}
   - component: {fileID: 79228475}
   - component: {fileID: 79228476}
-  - component: {fileID: 79228477}
   - component: {fileID: 79228478}
+  - component: {fileID: 79228477}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1544,7 +1544,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bfaea37c0146bb4ba6554e979bfcfa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clip: {fileID: 8300000, guid: a55ebf309949cf445843d8e1eea6e108, type: 3}
+  clips:
+  - {fileID: 8300000, guid: a55ebf309949cf445843d8e1eea6e108, type: 3}
+  - {fileID: 8300000, guid: e52d12f516779f44b96dd1af0b6fe9fc, type: 3}
 --- !u!82 &79228478
 AudioSource:
   m_ObjectHideFlags: 0
@@ -4336,7 +4338,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1111738012}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37.62131, y: -58.208523, z: -93.07677}
+  m_LocalPosition: {x: 37.62131, y: 0, z: -93.07677}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 3991552843639029956}
@@ -8228,7 +8230,7 @@ PrefabInstance:
     - target: {fileID: 1878012662487022194, guid: 635228aeaed8f0541b52f472b278b69a,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 58.208523
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1878012662487022194, guid: 635228aeaed8f0541b52f472b278b69a,
         type: 3}
@@ -8275,6 +8277,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Castle
       objectReference: {fileID: 0}
+    - target: {fileID: 6085565839971696564, guid: 635228aeaed8f0541b52f472b278b69a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
     - target: {fileID: 6912755241912184048, guid: 635228aeaed8f0541b52f472b278b69a,
         type: 3}
       propertyPath: Loop
@@ -8300,6 +8307,16 @@ PrefabInstance:
       propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 7672008043081185800, guid: 635228aeaed8f0541b52f472b278b69a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 8803180978446736599, guid: 635228aeaed8f0541b52f472b278b69a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 635228aeaed8f0541b52f472b278b69a, type: 3}
 --- !u!1001 &2751130328094626787
@@ -8309,6 +8326,31 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1111738013}
     m_Modifications:
+    - target: {fileID: 2751130327836211844, guid: f67f510232295034a9bba0f9a8fb0116,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751130328816041913, guid: f67f510232295034a9bba0f9a8fb0116,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751130329167409329, guid: f67f510232295034a9bba0f9a8fb0116,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -27.44
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751130329485506612, guid: f67f510232295034a9bba0f9a8fb0116,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
+    - target: {fileID: 2751130329485727496, guid: f67f510232295034a9bba0f9a8fb0116,
+        type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -3.3
+      objectReference: {fileID: 0}
     - target: {fileID: 7864566198525252930, guid: f67f510232295034a9bba0f9a8fb0116,
         type: 3}
       propertyPath: m_RootOrder
@@ -8322,7 +8364,7 @@ PrefabInstance:
     - target: {fileID: 7864566198525252930, guid: f67f510232295034a9bba0f9a8fb0116,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 58.208523
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7864566198525252930, guid: f67f510232295034a9bba0f9a8fb0116,
         type: 3}
@@ -8396,6 +8438,16 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1111738013}
     m_Modifications:
+    - target: {fileID: 6503426654078986705, guid: 7d7de51132059ba4b9cb47a399e89d2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Ground
+      objectReference: {fileID: 0}
+    - target: {fileID: 6503426654252537080, guid: 7d7de51132059ba4b9cb47a399e89d2f,
+        type: 3}
+      propertyPath: m_TagString
+      value: Grass
+      objectReference: {fileID: 0}
     - target: {fileID: 6503426654649411156, guid: 7d7de51132059ba4b9cb47a399e89d2f,
         type: 3}
       propertyPath: m_Name
@@ -8414,7 +8466,7 @@ PrefabInstance:
     - target: {fileID: 6503426654649411157, guid: 7d7de51132059ba4b9cb47a399e89d2f,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: 58.208523
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6503426654649411157, guid: 7d7de51132059ba4b9cb47a399e89d2f,
         type: 3}

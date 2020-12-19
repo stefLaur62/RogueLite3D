@@ -348,7 +348,7 @@ GameObject:
   - component: {fileID: 895104687513749011}
   - component: {fileID: 3878961216480330089}
   m_Layer: 0
-  m_Name: Audio Source
+  m_Name: Main_Soundtack
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -389,7 +389,7 @@ AudioSource:
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
-  MaxDistance: 500
+  MaxDistance: 250
   Pan2D: 0
   rolloffMode: 2
   BypassEffects: 0

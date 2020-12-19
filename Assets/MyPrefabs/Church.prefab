@@ -1551,7 +1551,7 @@ GameObject:
   - component: {fileID: 3179936357582605934}
   m_Layer: 0
   m_Name: SM_Env_GroundMound_07
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -1728,7 +1728,7 @@ GameObject:
   - component: {fileID: 3179936357571610963}
   m_Layer: 8
   m_Name: SM_Env_GroundMound_01
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -5248,7 +5248,7 @@ GameObject:
   - component: {fileID: 3179936356887576485}
   m_Layer: 8
   m_Name: SM_Env_GroundMound_04
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -6311,7 +6311,7 @@ GameObject:
   - component: {fileID: 3179936356748101211}
   m_Layer: 8
   m_Name: SM_Env_GroundMound_02
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -8370,7 +8370,7 @@ GameObject:
   - component: {fileID: 3179936356447910419}
   m_Layer: 8
   m_Name: SM_Env_GroundMound_08
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -9231,7 +9231,7 @@ GameObject:
   - component: {fileID: 3179936356325593342}
   m_Layer: 8
   m_Name: SM_Env_GroundMound_06
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -11449,7 +11449,7 @@ GameObject:
   - component: {fileID: 3179936355975365441}
   m_Layer: 8
   m_Name: SM_Env_GroundMound_05
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
@@ -12118,7 +12118,7 @@ GameObject:
   - component: {fileID: 8009662929835922822}
   m_Layer: 8
   m_Name: SM_Env_GroundMound_04 (1)
-  m_TagString: Untagged
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 8
