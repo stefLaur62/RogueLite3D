@@ -2,30 +2,33 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MouseLook : MonoBehaviour
+public class MouseRotatePlayer : MonoBehaviour
 {
     private PlayerActionControls playerActionControls;
 
     [SerializeField]
     private float mouseSensitivity = 200f;
-
-    public Transform playerBody;
+    [SerializeField]
+    private Transform cameraTransform;
 
     void Start()
     {
 
         //Cursor.lockState = CursorLockMode.Locked;
         //Cursor.visible = false;
+
     }
 
     void FixedUpdate()
     {
+
         float mouseInput = playerActionControls.Player.MouseLook.ReadValue<float>();
         if (mouseInput < -1)
             mouseInput = -1;
         else if (mouseInput > 1)
             mouseInput = 1;
-        playerBody.Rotate(Vector3.up * mouseInput * mouseSensitivity * Time.fixedDeltaTime);
+
+        this.transform.Rotate(Vector3.up * mouseInput * mouseSensitivity * Time.fixedDeltaTime);
     }
 
     private void Awake()
