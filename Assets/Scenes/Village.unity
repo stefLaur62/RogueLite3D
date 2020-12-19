@@ -1426,6 +1426,7 @@ GameObject:
   - component: {fileID: 79228473}
   - component: {fileID: 79228474}
   - component: {fileID: 79228475}
+  - component: {fileID: 79228476}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -1521,6 +1522,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 200
   cameraTransform: {fileID: 963194228}
+--- !u!81 &79228476
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 79228470}
+  m_Enabled: 1
 --- !u!1 &79230976
 GameObject:
   m_ObjectHideFlags: 0
@@ -4079,7 +4088,6 @@ GameObject:
   m_Component:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
-  - component: {fileID: 963194226}
   - component: {fileID: 963194230}
   - component: {fileID: 963194229}
   m_Layer: 0
@@ -4089,14 +4097,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &963194226
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 963194225}
-  m_Enabled: 1
 --- !u!20 &963194227
 Camera:
   m_ObjectHideFlags: 0
@@ -4121,8 +4121,8 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  far clip plane: 500
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -4167,9 +4167,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 79459076}
-  offsetPosition: {x: 0, y: 2.8, z: -3}
+  offsetPosition: {x: 0, y: 2.8, z: -2}
   offsetPositionSpace: 1
-  cameraAngle: 30
+  cameraAngle: 20
 --- !u!114 &963194230
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8163,6 +8163,31 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Castle
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912755241912184048, guid: 635228aeaed8f0541b52f472b278b69a,
+        type: 3}
+      propertyPath: Loop
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912755241912184048, guid: 635228aeaed8f0541b52f472b278b69a,
+        type: 3}
+      propertyPath: MaxDistance
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912755241912184048, guid: 635228aeaed8f0541b52f472b278b69a,
+        type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912755241912184048, guid: 635228aeaed8f0541b52f472b278b69a,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912755241912184048, guid: 635228aeaed8f0541b52f472b278b69a,
+        type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 635228aeaed8f0541b52f472b278b69a, type: 3}

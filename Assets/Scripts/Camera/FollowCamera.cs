@@ -14,7 +14,7 @@ public class FollowCamera : MonoBehaviour
     private Space offsetPositionSpace = Space.Self;
 
     [SerializeField]
-    private float cameraAngle = 30f;
+    private float cameraAngle = 20f;
 
     private void LateUpdate()
     {
