@@ -1544,9 +1544,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9bfaea37c0146bb4ba6554e979bfcfa4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clips:
+  stepClips:
   - {fileID: 8300000, guid: a55ebf309949cf445843d8e1eea6e108, type: 3}
   - {fileID: 8300000, guid: e52d12f516779f44b96dd1af0b6fe9fc, type: 3}
+  jumpClips:
+  - {fileID: 8300000, guid: e7c5857cd4970f54190e6ceb9a7a3202, type: 3}
+  - {fileID: 8300000, guid: 98a341f99b2cb164bae95847abd43dc3, type: 3}
 --- !u!82 &79228478
 AudioSource:
   m_ObjectHideFlags: 0

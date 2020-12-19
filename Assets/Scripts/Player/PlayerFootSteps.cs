@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerFootSteps : MonoBehaviour
 {
     [SerializeField]
-    private AudioClip[] clips;
+    private AudioClip[] stepClips;
+    [SerializeField]
+    private AudioClip[] jumpClips;
     private AudioSource audioSource;
     private float volume = 1f;
 
@@ -22,19 +25,19 @@ public class PlayerFootSteps : MonoBehaviour
     private void Step()
     {
 
-        audioSource.PlayOneShot(getClip(),volume);
+        audioSource.PlayOneShot(getStepClip(),volume);
     }
-    private AudioClip getClip()
+    private AudioClip getStepClip()
     {
         if (!isGrass())
         {
             volume = 1f;
-            return clips[0];
+            return stepClips[0];
         }
         else
         {
             volume = 0.1f;
-            return clips[1];
+            return stepClips[1];
         }
     }
 
@@ -52,5 +55,24 @@ public class PlayerFootSteps : MonoBehaviour
 
         }
         return false;
+    }
+
+    private void JumpSound()
+    {
+        audioSource.PlayOneShot(getJumpClip(), volume);
+    }
+
+    private AudioClip getJumpClip()
+    {
+        if (!isGrass())
+        {
+            volume = .4f;
+            return jumpClips[0];
+        }
+        else
+        {
+            volume = .1f;
+            return jumpClips[1];
+        }
     }
 }
