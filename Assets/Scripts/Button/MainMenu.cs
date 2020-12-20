@@ -27,7 +27,8 @@ public class MainMenu : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.LoadScene("MainMenu", LoadSceneMode.Single);
+        SceneManager.UnloadSceneAsync("Config");
+        //SceneManager.UnloadSceneAsync("CreateGame");
     }
 
     public void ExitGame()
