@@ -60,7 +60,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Walk"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""d4c3eae7-40e5-48aa-b2be-b41f76980aa2"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -68,8 +68,16 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""SaveGame"",
-                    ""type"": ""Button"",
+                    ""type"": ""PassThrough"",
                     ""id"": ""c67b50fd-be00-4595-a26a-73b6836cef48"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Interact"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""bcfb8889-0e6b-4fcc-a9f6-61da10051081"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
@@ -482,6 +490,39 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""action"": ""SaveGame"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""d7173c48-5c87-496e-b685-b7e0865a2d77"",
+                    ""path"": ""<Keyboard>/e"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a3b64eda-593a-494a-b4d5-e728cc440fd6"",
+                    ""path"": ""<Gamepad>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c5d11cb6-c429-4199-95d7-2f8e3a50cf02"",
+                    ""path"": ""<XInputController>/buttonEast"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Interact"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -497,6 +538,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         m_Player_OpenInventory = m_Player.FindAction("OpenInventory", throwIfNotFound: true);
         m_Player_Walk = m_Player.FindAction("Walk", throwIfNotFound: true);
         m_Player_SaveGame = m_Player.FindAction("SaveGame", throwIfNotFound: true);
+        m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -553,6 +595,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_OpenInventory;
     private readonly InputAction m_Player_Walk;
     private readonly InputAction m_Player_SaveGame;
+    private readonly InputAction m_Player_Interact;
     public struct PlayerActions
     {
         private @PlayerActionControls m_Wrapper;
@@ -564,6 +607,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         public InputAction @OpenInventory => m_Wrapper.m_Player_OpenInventory;
         public InputAction @Walk => m_Wrapper.m_Player_Walk;
         public InputAction @SaveGame => m_Wrapper.m_Player_SaveGame;
+        public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -594,6 +638,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @SaveGame.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSaveGame;
                 @SaveGame.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSaveGame;
                 @SaveGame.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSaveGame;
+                @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
+                @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -619,6 +666,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @SaveGame.started += instance.OnSaveGame;
                 @SaveGame.performed += instance.OnSaveGame;
                 @SaveGame.canceled += instance.OnSaveGame;
+                @Interact.started += instance.OnInteract;
+                @Interact.performed += instance.OnInteract;
+                @Interact.canceled += instance.OnInteract;
             }
         }
     }
@@ -632,5 +682,6 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         void OnOpenInventory(InputAction.CallbackContext context);
         void OnWalk(InputAction.CallbackContext context);
         void OnSaveGame(InputAction.CallbackContext context);
+        void OnInteract(InputAction.CallbackContext context);
     }
 }

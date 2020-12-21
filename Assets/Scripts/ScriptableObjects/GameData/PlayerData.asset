@@ -12,10 +12,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c05d39e5410992c4b91af48b67b2f10b, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: 
-  gamename: 
+  gameName: Caroke
   savePath: /GameData.save
-  classId: 0
+  classId: 1
   money: 0
   force: 0
   speed: 0
-  health: 0
+  health: 100

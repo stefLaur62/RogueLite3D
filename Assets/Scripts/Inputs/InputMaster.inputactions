@@ -47,7 +47,7 @@
                 },
                 {
                     "name": "Walk",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "d4c3eae7-40e5-48aa-b2be-b41f76980aa2",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -55,8 +55,16 @@
                 },
                 {
                     "name": "SaveGame",
-                    "type": "Button",
+                    "type": "PassThrough",
                     "id": "c67b50fd-be00-4595-a26a-73b6836cef48",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                },
+                {
+                    "name": "Interact",
+                    "type": "PassThrough",
+                    "id": "bcfb8889-0e6b-4fcc-a9f6-61da10051081",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": ""
@@ -467,6 +475,39 @@
                     "processors": "",
                     "groups": "",
                     "action": "SaveGame",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "d7173c48-5c87-496e-b685-b7e0865a2d77",
+                    "path": "<Keyboard>/e",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a3b64eda-593a-494a-b4d5-e728cc440fd6",
+                    "path": "<Gamepad>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c5d11cb6-c429-4199-95d7-2f8e3a50cf02",
+                    "path": "<XInputController>/buttonEast",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Interact",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

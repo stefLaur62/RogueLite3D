@@ -39,12 +39,10 @@ public class DataManager : MonoBehaviour
     }
     public void Load()
     {
-        Debug.Log(gameData.health);
-        gameData.Load();
-        Debug.Log(gameData.health);
         //temporary
         if (gameData.gameName.Length < 1)
             gameData.gameName = "Caroke";
+        gameData.Load();
         playerEquipment.Load(gameData.gameName);
         playerInventory.Load(gameData.gameName);
     }

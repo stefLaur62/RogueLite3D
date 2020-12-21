@@ -9,8 +9,6 @@ public class PlayerMovement : MonoBehaviour
 
     public CharacterController controller;
 
-    public Keybinds keybinds;
-
     private Animator anim;
 
     [SerializeField]

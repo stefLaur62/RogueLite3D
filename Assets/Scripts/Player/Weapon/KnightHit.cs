@@ -21,6 +21,7 @@ public class KnightHit : MonoBehaviour
     {
         if (other.gameObject.tag != "Player")
         {
+            Debug.Log("HIT");
             playerAttack.OnSwordHit(other);
         }
     }

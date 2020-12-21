@@ -8,7 +8,6 @@ public class Player : MonoBehaviour
 
     public InventoryObject inventory;
     public GameObject inventoryCanvas;
-    public Keybinds keybinds;
     public void Start()
     {
         //inventory.Load();

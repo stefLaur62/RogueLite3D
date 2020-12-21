@@ -18,13 +18,16 @@ public class CreateGame : MonoBehaviour
 
     public void createGame()
     {
-        Debug.Log(gamename.text.Length);
         if (gamename.text.Length > 0)
         {
             gameData.gameName = gamename.text;
             gameData.SetClass(classname.text);
             gameData.Save();
             SceneManager.LoadScene("Village", LoadSceneMode.Single);
+        } 
+        else
+        {
+            //can't create if no game name
         }
     }
 }

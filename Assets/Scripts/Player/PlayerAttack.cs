@@ -8,8 +8,7 @@ public class PlayerAttack : MonoBehaviour
     private PlayerActionControls playerActionControls;
 
 
-    public DataManager playerData;
-    public Keybinds keybinds;
+    private GameData playerData;
 
     private Animator anim;
 
