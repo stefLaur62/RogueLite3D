@@ -42,7 +42,7 @@ public class GameData : ScriptableObject
             {
                 Directory.CreateDirectory(string.Concat(Application.persistentDataPath, "/", gameName));
             }
-            if(File.Exists(string.Concat(Application.persistentDataPath, savePath)))
+            if(File.Exists(string.Concat(Application.persistentDataPath, "/", gameName, savePath)))
             {
                 BinaryFormatter bf = new BinaryFormatter();
                 FileStream file = File.Open(string.Concat(Application.persistentDataPath, "/", gameName, savePath), FileMode.Open);

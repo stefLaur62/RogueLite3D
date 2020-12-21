@@ -19,7 +19,6 @@ public class ChangeKeybind : MonoBehaviour
 
     void Start()
     {
-        Debug.Log("Start");
         canChange = false;
         LoadKey();
     }
