@@ -27,10 +27,12 @@ public class MainMenu : MonoBehaviour
 
     public void BackToMenu()
     {
-        SceneManager.UnloadSceneAsync("Config");
-        //SceneManager.UnloadSceneAsync("CreateGame");
+        SceneManager.UnloadSceneAsync(SceneManager.GetSceneAt(1));
     }
-
+    public void LoadGame()
+    {
+        SceneManager.LoadScene("LoadGame", LoadSceneMode.Additive);
+    }
     public void ExitGame()
     {
     #if UNITY_EDITOR

@@ -44,10 +44,8 @@ public class PlayerFootSteps : MonoBehaviour
     private bool isGrass()
     {
         RaycastHit hit = new RaycastHit();
-        Debug.DrawRay(transform.position, Vector3.down);
         if (Physics.Raycast(transform.position, Vector3.down, out hit))
         {
-            Debug.Log(hit.collider.gameObject.tag);
             if (hit.collider.gameObject.tag == "Grass")
             {
                 return true;
