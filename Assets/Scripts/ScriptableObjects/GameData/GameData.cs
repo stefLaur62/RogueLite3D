@@ -15,6 +15,7 @@ public class GameData : ScriptableObject
     public int force = 0;
     public int speed = 0;
     public int health = 0;
+    public int currentHealth = 0;
 
     public void Save()
     {

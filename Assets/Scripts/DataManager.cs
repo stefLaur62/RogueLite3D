@@ -7,17 +7,17 @@ using UnityEngine;
 public class DataManager : MonoBehaviour
 {
     private PlayerActionControls playerActionControls;
+
     public GameData gameData;
     public InventoryObject playerInventory;
     public InventoryObject playerEquipment;
-
+    public HealthBar healthBar;
 
     public void Awake()
     {
         playerActionControls = new PlayerActionControls();
         Load();
-
-        
+        SetHealthBar();
     }
     public void FixedUpdate()
     {
@@ -43,6 +43,7 @@ public class DataManager : MonoBehaviour
         if (gameData.gameName.Length < 1)
             gameData.gameName = "Caroke";
         gameData.Load();
+        gameData.currentHealth = gameData.health;
         playerEquipment.Load(gameData.gameName);
         playerInventory.Load(gameData.gameName);
     }
@@ -54,5 +55,10 @@ public class DataManager : MonoBehaviour
     private void OnDisable()
     {
         playerActionControls.Disable();
+    }
+    private void SetHealthBar()
+    {
+        healthBar.SetMaxHealth(gameData.health);
+        healthBar.SetHealth(gameData.currentHealth);
     }
 }
