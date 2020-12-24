@@ -13,10 +13,10 @@ public class MouseRotatePlayer : MonoBehaviour
 
     void Start()
     {
-
-        //Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
-
+#if !UNITY_EDITOR
+        Cursor.lockState = CursorLockMode.Locked;
+        Cursor.visible = false;
+#endif
     }
 
     void FixedUpdate()

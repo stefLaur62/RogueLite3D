@@ -15,7 +15,7 @@ public class PlayerAttack : MonoBehaviour
     public bool isAttacking = false;
     void Start()
     { 
-        anim = GetComponent<Animator>();
+        anim = GetComponentInChildren<Animator>();
 
     }
 

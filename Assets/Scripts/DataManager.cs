@@ -24,6 +24,7 @@ public class DataManager : MonoBehaviour
         Load();
         SetHealthBar();
         SetPlayerCharacter();
+        Debug.Log("End Loading");
     }
     public void FixedUpdate()
     {
@@ -50,6 +51,7 @@ public class DataManager : MonoBehaviour
             gameData.gameName = "Caroke";
         gameData.Load();
         gameData.currentHealth = gameData.health;
+        SetMoneyHUD();
         playerEquipment.Load(gameData.gameName);
         playerInventory.Load(gameData.gameName);
     }
@@ -74,6 +76,10 @@ public class DataManager : MonoBehaviour
     public void AddMoney(int amount)
     {
         gameData.money += amount;
+        SetMoneyHUD();
+    }
+    public void SetMoneyHUD()
+    {
         if (moneyHud != null)
             moneyHud.setMoney(gameData.money);
     }
@@ -84,16 +90,11 @@ public class DataManager : MonoBehaviour
         {
             if (gameData.classId == 0)
             {
-                //Player play knight
-                knight.SetActive(true);
-                sorcerer.SetActive(false);
-                followCamera.target = knight.transform;
+                Destroy(sorcerer);
             }
             else if (gameData.classId == 1)
             {
-                knight.SetActive(false);
-                sorcerer.SetActive(true);
-                followCamera.target = sorcerer.transform;
+                Destroy(knight);
             }
         } else
         {

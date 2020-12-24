@@ -5648,6 +5648,7 @@ GameObject:
   - component: {fileID: 8803180976817201844}
   - component: {fileID: 8803180976816421158}
   - component: {fileID: 8803180976815415212}
+  - component: {fileID: 539483165532420720}
   m_Layer: 8
   m_Name: SM_Bld_StairsLarge_01
   m_TagString: Untagged
@@ -5718,6 +5719,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &539483165532420720
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8803180976817396408}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 55149d269f586804bb6b98641ba31301, type: 3}
 --- !u!1 &8803180976819144808
 GameObject:
   m_ObjectHideFlags: 0
@@ -16817,6 +16832,7 @@ GameObject:
   - component: {fileID: 8803180977795715415}
   - component: {fileID: 8803180977792246525}
   - component: {fileID: 8803180977793329719}
+  - component: {fileID: 1777667546743232185}
   m_Layer: 0
   m_Name: SM_Bld_Castle_Wall_01_Lite
   m_TagString: Untagged
@@ -16887,6 +16903,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &1777667546743232185
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8803180977795510283}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: e330742a442cc044683c72a0f6dde3a0, type: 3}
 --- !u!1 &8803180977804942105
 GameObject:
   m_ObjectHideFlags: 0
@@ -17155,6 +17185,7 @@ GameObject:
   - component: {fileID: 8803180977837441702}
   - component: {fileID: 8803180977834563892}
   - component: {fileID: 8803180977835704254}
+  - component: {fileID: 7816049296896058448}
   m_Layer: 8
   m_Name: SM_Bld_StairsLarge_02
   m_TagString: Untagged
@@ -17225,6 +17256,20 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!64 &7816049296896058448
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8803180977837652650}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 4300000, guid: 55149d269f586804bb6b98641ba31301, type: 3}
 --- !u!1 &8803180977851106319
 GameObject:
   m_ObjectHideFlags: 0
@@ -32244,15 +32289,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68a8f186e1f1db64dbfe8ddd247816ec, type: 3}
---- !u!4 &6413992441588443340 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 490268, guid: 68a8f186e1f1db64dbfe8ddd247816ec,
-    type: 3}
-  m_PrefabInstance: {fileID: 6413992441588487120}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6413992441588606380 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 128636, guid: 68a8f186e1f1db64dbfe8ddd247816ec,
+    type: 3}
+  m_PrefabInstance: {fileID: 6413992441588487120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6413992441588443340 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 490268, guid: 68a8f186e1f1db64dbfe8ddd247816ec,
     type: 3}
   m_PrefabInstance: {fileID: 6413992441588487120}
   m_PrefabAsset: {fileID: 0}
@@ -32836,15 +32881,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 33adbca995ce9484f9258d275aabac10, type: 3}
---- !u!1 &7447921521041775796 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 162728, guid: 33adbca995ce9484f9258d275aabac10,
-    type: 3}
-  m_PrefabInstance: {fileID: 7447921521041663772}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7447921521041586316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 483216, guid: 33adbca995ce9484f9258d275aabac10,
+    type: 3}
+  m_PrefabInstance: {fileID: 7447921521041663772}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7447921521041775796 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 162728, guid: 33adbca995ce9484f9258d275aabac10,
     type: 3}
   m_PrefabInstance: {fileID: 7447921521041663772}
   m_PrefabAsset: {fileID: 0}

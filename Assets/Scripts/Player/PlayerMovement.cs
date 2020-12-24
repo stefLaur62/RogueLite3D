@@ -7,9 +7,12 @@ public class PlayerMovement : MonoBehaviour
 {
     private PlayerActionControls playerActionControls;
 
-    public CharacterController controller;
+    private CharacterController controller;
+    
+    private Animator animator;
 
-    private Animator anim;
+    [SerializeField]
+    private PlayerAttack playerAttack;
 
     [SerializeField]
     private float speed = 6.5f;
@@ -27,21 +30,38 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.4f;
     public LayerMask groundMask;
 
-    public bool isGrounded;
+    private bool isGrounded;
 
-    public PlayerAttack playerAttack;
+    [SerializeField]
+    private GameData gameData;
+    private void Awake()
+    {
+        playerActionControls = new PlayerActionControls();
+    }
     void Start()
     {
+        SetAnimator();
+        SetPlayerAttack();
+        SetCharacterController();
+    }
+
+    private void SetAnimator()
+    {
+        animator = GetComponentsInChildren<Animator>()[gameData.classId];
+    }
+    private void SetPlayerAttack()
+    {
+        playerAttack = GetComponentsInChildren<PlayerAttack>()[gameData.classId];
+    }
+
+    private void SetCharacterController()
+    {
+        controller = GetComponent<CharacterController>();
     }
 
     void FixedUpdate()
     {
         Move();
-    }
-    private void Awake()
-    {
-        anim = GetComponent<Animator>();
-        playerActionControls = new PlayerActionControls();
     }
 
     private void OnEnable()
@@ -62,7 +82,7 @@ public class PlayerMovement : MonoBehaviour
         bool backward = false;
         bool walk = false;
         bool jump = false;
-        anim.ResetTrigger("isJumping");
+        animator.ResetTrigger("isJumping");
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDistance, groundMask);
         if(isGrounded && velocity.y < 0)
         {
@@ -142,17 +162,17 @@ public class PlayerMovement : MonoBehaviour
 
     void resetAnimation()
     {
-        anim.SetBool("isRunning", false);
-        anim.SetBool("isWalking", false);
-        anim.SetBool("goBackward", false);
-        anim.SetInteger("Strafe", 0);
+        animator.SetBool("isRunning", false);
+        animator.SetBool("isWalking", false);
+        animator.SetBool("goBackward", false);
+        animator.SetInteger("Strafe", 0);
     }
 
     void SetAnimation(bool left, bool forward, bool right, bool backward, bool walk, bool jump)
     {
         if (jump)
         {
-            anim.SetTrigger("isJumping");
+            animator.SetTrigger("isJumping");
 
         }
         else if((left || right) && !forward && !backward) //Only left or right
@@ -229,16 +249,16 @@ public class PlayerMovement : MonoBehaviour
 
     void SetBackwardAnimation(bool walk)
     {
-        if (anim != null)
+        if (animator != null)
         {
-            anim.SetBool("goBackward", true);
+            animator.SetBool("goBackward", true);
             if (walk)
             {
-                anim.SetBool("isWalking", true);
+                animator.SetBool("isWalking", true);
             }
             else
             {
-                anim.SetBool("isRunning", true);
+                animator.SetBool("isRunning", true);
             }
         }
         else
@@ -250,11 +270,11 @@ public class PlayerMovement : MonoBehaviour
     //Strafe -1 = left   |   strafe 1 = right
     void SetWalkAnimation(int strafe)
     {
-        if (anim != null) { 
-            anim.SetBool("isWalking", true);
-            anim.SetBool("isRunning", false);
-            anim.SetBool("goBackward", false);
-            anim.SetInteger("Strafe", strafe);
+        if (animator != null) { 
+            animator.SetBool("isWalking", true);
+            animator.SetBool("isRunning", false);
+            animator.SetBool("goBackward", false);
+            animator.SetInteger("Strafe", strafe);
         }
         else
         {
@@ -264,12 +284,12 @@ public class PlayerMovement : MonoBehaviour
 
     void SetMoveAnimation(int strafe)
     {
-        if (anim != null)
+        if (animator != null)
         {
-            anim.SetBool("isRunning", true);
-            anim.SetBool("isWalking", false);
-            anim.SetBool("goBackward", false);
-            anim.SetInteger("Strafe", strafe);
+            animator.SetBool("isRunning", true);
+            animator.SetBool("isWalking", false);
+            animator.SetBool("goBackward", false);
+            animator.SetInteger("Strafe", strafe);
         }
         else
         {

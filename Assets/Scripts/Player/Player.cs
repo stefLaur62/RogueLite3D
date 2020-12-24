@@ -47,15 +47,6 @@ public class Player : MonoBehaviour
     {
         float inventoryInput = playerActionControls.Player.OpenInventory.ReadValue<float>();
 
-        //change save / load later
-        /*if (Input.GetKeyDown(KeyCode.Space))
-        {
-            inventory.Save();
-        }
-        if (Input.GetKeyDown(KeyCode.Return))
-        {
-            inventory.Load();
-        }*/
         if (inventoryInput > 0)
         {
             inventoryScreen.SetActive(!inventoryScreen.activeSelf);

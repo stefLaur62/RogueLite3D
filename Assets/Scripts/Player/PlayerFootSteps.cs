@@ -15,7 +15,7 @@ public class PlayerFootSteps : MonoBehaviour
 
     void Start()
     {
-        audioSource = GetComponent<AudioSource>();
+        audioSource = GetComponentInParent<AudioSource>();
     }
 
     void Update()
