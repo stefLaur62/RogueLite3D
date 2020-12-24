@@ -12,12 +12,18 @@ public class DataManager : MonoBehaviour
     public InventoryObject playerInventory;
     public InventoryObject playerEquipment;
     public HealthBar healthBar;
+    public Money moneyHud;
 
+    public GameObject knight;
+    public GameObject sorcerer;
+
+    public FollowCamera followCamera;
     public void Awake()
     {
         playerActionControls = new PlayerActionControls();
         Load();
         SetHealthBar();
+        SetPlayerCharacter();
     }
     public void FixedUpdate()
     {
@@ -58,7 +64,40 @@ public class DataManager : MonoBehaviour
     }
     private void SetHealthBar()
     {
-        healthBar.SetMaxHealth(gameData.health);
-        healthBar.SetHealth(gameData.currentHealth);
+
+        if (healthBar != null)
+        {
+            healthBar.SetMaxHealth(gameData.health);
+            healthBar.SetHealth(gameData.currentHealth);
+        }
+    }
+    public void AddMoney(int amount)
+    {
+        gameData.money += amount;
+        if (moneyHud != null)
+            moneyHud.setMoney(gameData.money);
+    }
+
+    public void SetPlayerCharacter()
+    {
+        if (knight != null && sorcerer != null)
+        {
+            if (gameData.classId == 0)
+            {
+                //Player play knight
+                knight.SetActive(true);
+                sorcerer.SetActive(false);
+                followCamera.target = knight.transform;
+            }
+            else if (gameData.classId == 1)
+            {
+                knight.SetActive(false);
+                sorcerer.SetActive(true);
+                followCamera.target = sorcerer.transform;
+            }
+        } else
+        {
+            Debug.Log("No player");
+        }
     }
 }

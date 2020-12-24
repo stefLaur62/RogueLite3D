@@ -7,10 +7,10 @@ public class Player : MonoBehaviour
     private PlayerActionControls playerActionControls;
 
     public InventoryObject inventory;
-    public GameObject inventoryCanvas;
+    public GameObject inventoryScreen;
     public void Start()
     {
-        //inventory.Load();
+
     }
     private void Awake()
     {
@@ -58,7 +58,7 @@ public class Player : MonoBehaviour
         }*/
         if (inventoryInput > 0)
         {
-            inventoryCanvas.SetActive(!inventoryCanvas.activeSelf);
+            inventoryScreen.SetActive(!inventoryScreen.activeSelf);
         }
     }
 }

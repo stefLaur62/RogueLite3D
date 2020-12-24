@@ -4,8 +4,7 @@ using UnityEngine;
 
 public class FollowCamera : MonoBehaviour
 {
-    [SerializeField]
-    private Transform target;
+    public Transform target;
 
     [SerializeField]
     private Vector3 offsetPosition;

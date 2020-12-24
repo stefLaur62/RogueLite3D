@@ -5,7 +5,7 @@ using UnityEngine;
 public class AddMoney : MonoBehaviour
 {
     [SerializeField]
-    private GameData gameData;
+    private DataManager dataManager;
     private int amount;
     void Start()
     {
@@ -21,7 +21,7 @@ public class AddMoney : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            gameData.money += amount;
+            dataManager.AddMoney(amount);
             Destroy(this.gameObject);
         }
     }

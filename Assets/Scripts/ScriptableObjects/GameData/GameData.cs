@@ -77,4 +77,5 @@ public class GameData : ScriptableObject
                 break;
         }
     }
+    
 }
