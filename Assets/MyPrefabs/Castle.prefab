@@ -16832,7 +16832,7 @@ GameObject:
   - component: {fileID: 8803180977795715415}
   - component: {fileID: 8803180977792246525}
   - component: {fileID: 8803180977793329719}
-  - component: {fileID: 1777667546743232185}
+  - component: {fileID: 213564917382158904}
   m_Layer: 0
   m_Name: SM_Bld_Castle_Wall_01_Lite
   m_TagString: Untagged
@@ -16903,8 +16903,8 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!64 &1777667546743232185
-MeshCollider:
+--- !u!65 &213564917382158904
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -16913,10 +16913,9 @@ MeshCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 4300000, guid: e330742a442cc044683c72a0f6dde3a0, type: 3}
+  serializedVersion: 2
+  m_Size: {x: 5.2803426, y: 5.0895057, z: 2.2194712}
+  m_Center: {x: 0.00455463, y: 2.5447528, z: 0.0000038145615}
 --- !u!1 &8803180977804942105
 GameObject:
   m_ObjectHideFlags: 0

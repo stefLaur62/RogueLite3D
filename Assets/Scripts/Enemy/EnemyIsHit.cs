@@ -5,15 +5,17 @@ using UnityEngine;
 public abstract class EnemyIsHit : MonoBehaviour
 {
     protected int playerDamage;
-    public static int Health;
+    public static int health;
+    [SerializeField]
+    protected GameData gameData;
+    
     public void loseLife()
     {
-        Debug.Log("Lose life");
-        Health -= playerDamage;
+        health -= playerDamage;
     }
     public void isAlive()
     {
-        if (Health <= 0)
+        if (health <= 0)
         {
             Destroy(this.gameObject);
         }

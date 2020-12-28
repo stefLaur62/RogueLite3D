@@ -50,6 +50,14 @@ public class Player : MonoBehaviour
         if (inventoryInput > 0)
         {
             inventoryScreen.SetActive(!inventoryScreen.activeSelf);
+            if (inventoryScreen.activeSelf)
+            {
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.visible = false;
+            }
         }
     }
 }

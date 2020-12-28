@@ -6,6 +6,7 @@ public class KnightHit : MonoBehaviour
 {
     [SerializeField]
     private PlayerAttack playerAttack;
+
     // Start is called before the first frame update
     void Start()
     {

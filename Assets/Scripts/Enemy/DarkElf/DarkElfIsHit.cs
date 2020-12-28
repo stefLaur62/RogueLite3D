@@ -7,8 +7,9 @@ public class DarkElfIsHit : EnemyIsHit
     // Start is called before the first frame update
     void Start()
     {
-        Health = 100;
-        playerDamage = 34;
+        health = 100; 
+        Debug.Log(gameData.attack);
+        playerDamage = gameData.attack * 5;
     }
 
     // Update is called once per frame
@@ -19,7 +20,8 @@ public class DarkElfIsHit : EnemyIsHit
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag=="Weapon")
+        Debug.Log("Trigger");
+        if (other.gameObject.tag=="Weapon")
             loseLife();
     }
 }

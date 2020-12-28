@@ -13,6 +13,7 @@ public class PlayerAttack : MonoBehaviour
     private Animator anim;
 
     public bool isAttacking = false;
+
     void Start()
     { 
         anim = GetComponentInChildren<Animator>();
@@ -43,18 +44,19 @@ public class PlayerAttack : MonoBehaviour
     public void Attack()
     {
         float attackInput = playerActionControls.Player.Attack.ReadValue<float>();
-
+  
         if (isAttacking && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.80)
         {
             isAttacking = false;
-            anim.SetBool("isAttacking",false);
-        } 
+            anim.SetBool("isAttacking", false);
+        }
         else if (attackInput > 0)
         {
             SetAttackingAnimation();
             isAttacking = true;
             anim.SetBool("isAttacking", true);
         }
+        
     }
 
     private void SetAttackingAnimation()
