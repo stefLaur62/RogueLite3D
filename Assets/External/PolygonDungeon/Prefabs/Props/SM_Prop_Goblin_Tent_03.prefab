@@ -11,6 +11,11 @@ GameObject:
   - component: {fileID: 498976}
   - component: {fileID: 3394446}
   - component: {fileID: 2391574}
+  - component: {fileID: 7987976226435857536}
+  - component: {fileID: 4619819076514544337}
+  - component: {fileID: 7820342609977084553}
+  - component: {fileID: 9148471838417345019}
+  - component: {fileID: 2829455340886574803}
   m_Layer: 0
   m_Name: SM_Prop_Goblin_Tent_03
   m_TagString: Untagged
@@ -54,6 +59,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -78,3 +85,69 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7987976226435857536
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121376}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38944244, y: 2.1922073, z: 0.36114264}
+  m_Center: {x: 1.4046514, y: 1.0961037, z: 0.8712652}
+--- !u!65 &4619819076514544337
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121376}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38944244, y: 2.6015372, z: 0.36114264}
+  m_Center: {x: 1.4046514, y: 1.3007686, z: -0.85}
+--- !u!65 &7820342609977084553
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121376}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38944244, y: 2.6015372, z: 0.36114264}
+  m_Center: {x: -1.44, y: 1.3007686, z: -1}
+--- !u!65 &9148471838417345019
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121376}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.38944244, y: 2.179922, z: 0.36114264}
+  m_Center: {x: -1.27, y: 1.089961, z: 0.8}
+--- !u!65 &2829455340886574803
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 121376}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.5430908, y: 0.7669258, z: 2.662845}
+  m_Center: {x: 0, y: 2.5906658, z: 0.008850694}

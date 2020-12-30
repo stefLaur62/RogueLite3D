@@ -11,7 +11,10 @@ GameObject:
   - component: {fileID: 476394}
   - component: {fileID: 3382566}
   - component: {fileID: 2307434}
-  m_Layer: 0
+  - component: {fileID: 8373672897492466372}
+  - component: {fileID: 1145650754316728549}
+  - component: {fileID: 3613039160513608180}
+  m_Layer: 8
   m_Name: SM_Env_Wood_Bridge_Start_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,6 +57,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -78,3 +83,43 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8373672897492466372
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122446}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.8161826, y: 3.5903254, z: 1.6932201}
+  m_Center: {x: 0.11629224, y: 2.3325133, z: -1.9526224}
+--- !u!65 &1145650754316728549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122446}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 7.8161826, y: 3.5903254, z: 1.6932201}
+  m_Center: {x: 0.11629224, y: 2.3325133, z: 1.73}
+--- !u!65 &3613039160513608180
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 122446}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 8.048767, y: 0.69073105, z: 5.598467}
+  m_Center: {x: 0, y: 0.530179, z: 0.0000009536743}

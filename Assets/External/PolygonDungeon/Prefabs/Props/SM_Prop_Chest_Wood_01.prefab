@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 401336}
   - component: {fileID: 3307186}
   - component: {fileID: 2360532}
+  - component: {fileID: 2677257410816871549}
   m_Layer: 0
   m_Name: SM_Prop_Chest_Wood_Lid
   m_TagString: Untagged
@@ -54,6 +55,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -78,6 +81,20 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2677257410816871549
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 104034}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1233009, y: 0.308385, z: 0.83203554}
+  m_Center: {x: -0.00000029802322, y: 0.10873827, z: 0.377774}
 --- !u!1 &198910
 GameObject:
   m_ObjectHideFlags: 0
@@ -89,6 +106,7 @@ GameObject:
   - component: {fileID: 466550}
   - component: {fileID: 3358436}
   - component: {fileID: 2322930}
+  - component: {fileID: 2537355203467417621}
   m_Layer: 0
   m_Name: SM_Prop_Chest_Wood_01
   m_TagString: Untagged
@@ -133,6 +151,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -157,3 +177,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2537355203467417621
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 198910}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.164745, y: 0.468608, z: 0.8101473}
+  m_Center: {x: -0.00000029802322, y: 0.234304, z: -0.00000047683716}

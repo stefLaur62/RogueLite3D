@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 468028}
   - component: {fileID: 3375046}
   - component: {fileID: 2371978}
+  - component: {fileID: 8756972499681656650}
+  - component: {fileID: 1568506413935895747}
+  - component: {fileID: 2860872654822106733}
   m_Layer: 0
   m_Name: SM_Env_Bone_Rigcage_01
   m_TagString: Untagged
@@ -54,6 +57,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -78,3 +83,43 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &8756972499681656650
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153826}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4232268, y: 8.488742, z: 13.325515}
+  m_Center: {x: -3.3026273, y: 3.7178216, z: -0.6863332}
+--- !u!65 &1568506413935895747
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153826}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.3780036, y: 8.488742, z: 13.325515}
+  m_Center: {x: 3.3273885, y: 3.7178216, z: -0.6863332}
+--- !u!65 &2860872654822106733
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 153826}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 4.304656, y: 5.048564, z: 14.698196}
+  m_Center: {x: 0.023939133, y: 5.4379106, z: 0.0000076293945}

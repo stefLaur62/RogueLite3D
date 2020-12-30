@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 446656}
   - component: {fileID: 3367404}
   - component: {fileID: 2371808}
+  - component: {fileID: 7441588276991779374}
+  - component: {fileID: 7218399798860985075}
   m_Layer: 0
   m_Name: SM_Env_Cave_Background_Corner_01
   m_TagString: Untagged
@@ -54,6 +56,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -78,3 +82,30 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &7441588276991779374
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115854}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 26.988562, y: 25.007027, z: 11.225662}
+  m_Center: {x: 4.0141115, y: 12.500277, z: -10.188297}
+--- !u!65 &7218399798860985075
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 115854}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.840996, y: 25.007027, z: 21.973482}
+  m_Center: {x: -10.9516945, y: 12.500277, z: 6.175643}

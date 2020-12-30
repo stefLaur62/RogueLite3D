@@ -11,13 +11,20 @@ public class LoadNewScene : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private GameObject PlayerCamera;
+    [SerializeField]
+    private GameObject PlayerHUD;
+
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Player" && !isAlreadyLoaded)
         {
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
-            SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName(sceneName));
-            SceneManager.MoveGameObjectToScene(PlayerCamera, SceneManager.GetSceneByName(sceneName));
+            if (SceneManager.GetSceneByName(sceneName).name == null)
+            {
+                SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+                SceneManager.MoveGameObjectToScene(player, SceneManager.GetSceneByName(sceneName));
+                SceneManager.MoveGameObjectToScene(PlayerCamera, SceneManager.GetSceneByName(sceneName));
+                SceneManager.MoveGameObjectToScene(PlayerHUD, SceneManager.GetSceneByName(sceneName));
+            }
         }
     }
 }

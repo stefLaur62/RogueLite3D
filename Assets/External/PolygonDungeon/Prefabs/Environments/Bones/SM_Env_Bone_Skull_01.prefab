@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 495616}
   - component: {fileID: 3375174}
   - component: {fileID: 2392038}
+  - component: {fileID: 6338902402639599809}
+  - component: {fileID: 1779592876645576140}
+  - component: {fileID: 4755212718401309880}
   m_Layer: 0
   m_Name: SM_Env_Bone_Skull_01
   m_TagString: Untagged
@@ -54,6 +57,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -78,3 +83,43 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6338902402639599809
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.2584467, y: 7.5899544, z: 10.033233}
+  m_Center: {x: 2.2605824, y: 2.5244284, z: 3.8073583}
+--- !u!65 &1779592876645576140
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.9996967, y: 7.5899544, z: 10.511703}
+  m_Center: {x: -2.0725303, y: 2.5244284, z: 3.5429282}
+--- !u!65 &4755212718401309880
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 151284}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 9.276096, y: 1.9824696, z: 10.328468}
+  m_Center: {x: -0.0000019073486, y: 2.7916088, z: 3.6597404}

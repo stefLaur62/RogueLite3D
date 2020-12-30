@@ -21,6 +21,12 @@ EditorBuildSettings:
     path: Assets/Scenes/Village.unity
     guid: 9fc0d4010bbf28b4594072e72b8655ab
   - enabled: 1
-    path: Assets/Scenes/Dungeon 1.unity
+    path: Assets/Scenes/Dungeon 1/Dungeon1.unity
     guid: a7e9def5c6b8a4a488463eefef183879
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_hall.unity
+    guid: 1a0dbe580b57f7b45b00d8cfbaad26ac
+  - enabled: 1
+    path: Assets/Scenes/Dungeon 1/Dungeon1_Entrance.unity
+    guid: 52c55bf9e1d56e547ab49f2177c9828b
   m_configObjects: {}

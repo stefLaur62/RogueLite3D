@@ -11,7 +11,8 @@ GameObject:
   - component: {fileID: 440920}
   - component: {fileID: 3321228}
   - component: {fileID: 2397158}
-  m_Layer: 0
+  - component: {fileID: 4182219111999435772}
+  m_Layer: 8
   m_Name: SM_Env_Rock_Flat_Platform_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -54,6 +55,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -78,3 +81,17 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &4182219111999435772
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 129364}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.108738, y: 6.064992, z: 3.56571}
+  m_Center: {x: 0.075398445, y: -2.6750865, z: 0.06352925}

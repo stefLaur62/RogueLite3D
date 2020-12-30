@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 424770}
   - component: {fileID: 3365036}
   - component: {fileID: 2320124}
+  - component: {fileID: 1377386054130564638}
+  - component: {fileID: 1429794375837363635}
   m_Layer: 0
   m_Name: SM_Env_Minetrack_Bridge_Broken_01
   m_TagString: Untagged
@@ -54,6 +56,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -78,3 +82,30 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &1377386054130564638
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5803127, y: 0.3652048, z: 2.63721}
+  m_Center: {x: -2.5044374, y: -0.13247347, z: 1.3134189}
+--- !u!65 &1429794375837363635
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 112134}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.5803127, y: 4.7287855, z: 1.1283791}
+  m_Center: {x: -2.5044374, y: -2.6862683, z: 1.9957627}

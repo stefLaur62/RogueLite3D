@@ -11,6 +11,9 @@ GameObject:
   - component: {fileID: 455628}
   - component: {fileID: 3376842}
   - component: {fileID: 2352902}
+  - component: {fileID: 6886848966391690192}
+  - component: {fileID: 204964055257368664}
+  - component: {fileID: 449244440252414604}
   m_Layer: 0
   m_Name: SM_Env_MineTunnel_Entrance_01
   m_TagString: Untagged
@@ -54,6 +57,8 @@ MeshRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -78,3 +83,43 @@ MeshRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &6886848966391690192
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179926}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.2815921, y: 3.687266, z: 0.44476318}
+  m_Center: {x: 0.6505054, y: 1.8137449, z: 0.000005722046}
+--- !u!65 &204964055257368664
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179926}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.1941035, y: 3.687266, z: 0.44476318}
+  m_Center: {x: 4.3662553, y: 1.8137449, z: 0.000005722046}
+--- !u!65 &449244440252414604
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 179926}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2.4906054, y: 1.2585545, z: 0.44476318}
+  m_Center: {x: 2.52638, y: 3.0281005, z: 0.000005722046}
