@@ -12,6 +12,7 @@ public abstract class UserInterface : MonoBehaviour
     public InventoryObject inventory;
     protected Dictionary<GameObject, InventorySlot> slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
 
+    private PlayerActionControls playerActionControls;
     void Start()
     {
         for (int i = 0; i < inventory.container.items.Length; i++)
@@ -27,6 +28,21 @@ public abstract class UserInterface : MonoBehaviour
     {
         //move it later outside update to when inventory open
         UpdateSlots();
+    }
+
+    private void Awake()
+    {
+        playerActionControls = new PlayerActionControls();
+    }
+
+    private void OnEnable()
+    {
+        playerActionControls.Enable();
+    }
+
+    private void OnDisable()
+    {
+        playerActionControls.Disable();
     }
     public abstract void CreateSlot();
 
@@ -114,7 +130,6 @@ public abstract class UserInterface : MonoBehaviour
     public void OnDrag(GameObject obj)
     {
         if (MouseData.tempItem != null)
-            MouseData.tempItem.GetComponent<RectTransform>().position = Input.mousePosition;
-    }
-    
+            MouseData.tempItem.GetComponent<RectTransform>().position = playerActionControls.Player.MousePosition.ReadValue<Vector2>();
+    }  
 }
