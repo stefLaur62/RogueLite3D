@@ -2616,12 +2616,12 @@ GameObject:
   - component: {fileID: 7686703849079602836}
   - component: {fileID: 7686703849089269246}
   - component: {fileID: 7686703849089269245}
-  - component: {fileID: 7686703849089269241}
   - component: {fileID: 7686703849089269242}
   - component: {fileID: 7686703849089269240}
   - component: {fileID: 7686703849089269247}
   - component: {fileID: 7686703849089269236}
   - component: {fileID: 7686703849089269243}
+  - component: {fileID: 1652176760500395939}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -2695,7 +2695,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ab1ec56f2a75b546a5823b2685c0fbf, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  controller: {fileID: 7686703849089269246}
+  playerAttack: {fileID: 0}
   speed: 6
   walkSpeed: 3
   gravity: -17
@@ -2706,21 +2706,7 @@ MonoBehaviour:
   groundMask:
     serializedVersion: 2
     m_Bits: 256
-  isGrounded: 0
-  playerAttack: {fileID: 0}
---- !u!114 &7686703849089269241
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7686703849089269244}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fad055f8607fe0c46a3df12e60caddf5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isAttacking: 0
+  gameData: {fileID: 0}
 --- !u!114 &7686703849089269242
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2734,7 +2720,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventory: {fileID: 11400000, guid: 21cb2dc7eef04a447a43dd382651b87c, type: 2}
-  inventoryCanvas: {fileID: 0}
+  inventoryScreen: {fileID: 0}
 --- !u!114 &7686703849089269240
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2753,6 +2739,7 @@ MonoBehaviour:
   jumpClips:
   - {fileID: 8300000, guid: e7c5857cd4970f54190e6ceb9a7a3202, type: 3}
   - {fileID: 8300000, guid: 98a341f99b2cb164bae95847abd43dc3, type: 3}
+  audioSource: {fileID: 0}
 --- !u!114 &7686703849089269247
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2871,6 +2858,21 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1652176760500395939
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7686703849089269244}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fad055f8607fe0c46a3df12e60caddf5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mageAttackStart: {fileID: 0}
+  gameData: {fileID: 0}
+  isAttacking: 0
 --- !u!1 &7686703849089269492
 GameObject:
   m_ObjectHideFlags: 0

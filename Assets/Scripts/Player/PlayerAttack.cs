@@ -6,18 +6,17 @@ using UnityEngine;
 public class PlayerAttack : MonoBehaviour
 {
     private PlayerActionControls playerActionControls;
-
-
-    private GameData playerData;
-
-    private Animator anim;
+    [SerializeField]
+    private GameData gameData;
+    private Animator animator;
 
     public bool isAttacking = false;
-
+    private bool mageAttackDone = false;
+    [SerializeField]
+    private GameObject mageAttackImpactPrefab;
     void Start()
-    { 
-        anim = GetComponentInChildren<Animator>();
-
+    {
+        SetAnimator();
     }
 
     void Update()
@@ -27,7 +26,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        anim = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         playerActionControls = new PlayerActionControls();
     }
 
@@ -44,24 +43,35 @@ public class PlayerAttack : MonoBehaviour
     public void Attack()
     {
         float attackInput = playerActionControls.Player.Attack.ReadValue<float>();
-  
-        if (isAttacking && anim.GetCurrentAnimatorStateInfo(0).IsName("Attack") && anim.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.80)
+        if (animator == null)
         {
-            isAttacking = false;
-            anim.SetBool("isAttacking", false);
+            return;
+        }
+        if (isAttacking)
+        {
+            if(gameData.classId == 1 && !mageAttackDone && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.40 && animator.GetCurrentAnimatorStateInfo(0).normalizedTime < 0.42)
+            {
+                MageAttack();
+            }
+            if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack") && animator.GetCurrentAnimatorStateInfo(0).normalizedTime > 0.80)
+            {
+                isAttacking = false;
+                animator.SetBool("isAttacking", false);
+                mageAttackDone = false;
+            }
         }
         else if (attackInput > 0)
         {
             SetAttackingAnimation();
             isAttacking = true;
-            anim.SetBool("isAttacking", true);
+            animator.SetBool("isAttacking", true);
         }
         
     }
 
     private void SetAttackingAnimation()
     {
-        if (anim != null)
+        if (animator != null)
         {
             //anim.SetTrigger("isAttacking");
         }
@@ -73,7 +83,34 @@ public class PlayerAttack : MonoBehaviour
    
     public void OnSwordHit(Collider other)
     {
-        anim.SetBool("isAttacking", false);
+        animator.SetBool("isAttacking", false);
         isAttacking = false;
+    }
+
+    private void SetAnimator()
+    {
+        animator = GetComponentsInChildren<Animator>()[gameData.classId];
+    }
+    private void MageAttack()
+    {
+        Debug.Log("Boom");
+        mageAttackDone = true;
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position + Vector3.up, transform.forward, out hit, Mathf.Infinity))
+        {
+            Debug.DrawRay(transform.position + Vector3.up, transform.forward * hit.distance, Color.red, 10);
+
+            //Spawn effect
+            Instantiate(mageAttackImpactPrefab, hit.point, Quaternion.identity);
+            
+            if (hit.collider.gameObject.tag == "Enemy")
+            {
+                //Damage enemy
+                Debug.Log("TT");
+                EnemyIsHit enemyScript = hit.collider.gameObject.GetComponent<EnemyIsHit>();
+                enemyScript.loseLife();
+            }
+        }
     }
 }

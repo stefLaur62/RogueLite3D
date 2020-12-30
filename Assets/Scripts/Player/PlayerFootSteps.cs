@@ -9,22 +9,13 @@ public class PlayerFootSteps : MonoBehaviour
     private AudioClip[] stepClips;
     [SerializeField]
     private AudioClip[] jumpClips;
+    [SerializeField]
     private AudioSource audioSource;
     private float volume = 1f;
 
-
-    void Start()
-    {
-        audioSource = GetComponentInParent<AudioSource>();
-    }
-
-    void Update()
-    {
-        
-    }
     private void Step()
     {
-
+        Debug.Log(audioSource);
         audioSource.PlayOneShot(getStepClip(),volume);
     }
     private AudioClip getStepClip()

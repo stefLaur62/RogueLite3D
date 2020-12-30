@@ -15,8 +15,9 @@ public class PlayerDead : MonoBehaviour
     }
     public void PlayerIsDead()
     {
-        //reset player to village
-        //play clip
-        //
+        //Deadth Animation
+        //DeathHUD
+        //Reset player to village
+        //Play clip
     }
 }
