@@ -58,7 +58,7 @@ public class GameData : ScriptableObject
         }
         else
         {
-            Debug.LogError("Error: No game Name!");
+            Debug.Log("No game Name!");
         }
 
     }

@@ -12,20 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5fc02c405defdc54a8aa865917a59fd8, type: 3}
   m_Name: Sword 1
   m_EditorClassIdentifier: 
-  id: 2
   uiDisplay: {fileID: 21300000, guid: 18091d5844a80b54ca3ab8bcb52e66aa, type: 3}
+  stackable: 0
   type: 2
   description: 'Your first sword ! '
-  buffs:
-  - attributes: 0
-    value: 0
-    min: 1
-    max: 10
-  - attributes: 1
-    value: 0
-    min: 1
-    max: 10
-  - attributes: 2
-    value: 0
-    min: 1
-    max: 10
+  data:
+    name: 
+    id: 2
+    buffs:
+    - attributes: 3
+      value: 0
+      min: 1
+      max: 5

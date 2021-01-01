@@ -17,7 +17,7 @@ public class InventoryObject : ScriptableObject, ISerializationCallbackReceiver
         if (EmptySlotCount <= 0)
             return false;
         InventorySlot slot = FindItemOnInventory(item);
-        if(!database.items[item.id].stackable || slot == null)
+        if (!database.items[item.id].stackable || slot == null)
         {
             SetEmptySlot(item, amount);
             return true;

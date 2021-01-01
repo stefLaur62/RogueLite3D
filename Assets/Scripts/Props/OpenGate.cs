@@ -32,8 +32,6 @@ public class OpenGate : MonoBehaviour
             audioSource.time = audioSource.clip.length * .5f;
         }
     }
-
-    // Update is called once per frame
     void FixedUpdate()
     {
         float dist = Vector3.Distance(player.transform.position, this.transform.position);

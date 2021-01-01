@@ -24,14 +24,14 @@ MonoBehaviour:
       amount: 0
     - allowedItems: 0200000003000000
       item:
-        name: Sword 1
-        id: 2
+        name: 
+        id: -1
         buffs: []
       amount: 1
     - allowedItems: 04000000
       item:
-        name: Armor 4
-        id: 9
+        name: 
+        id: -1
         buffs: []
       amount: 1
     - allowedItems: 0500000006000000

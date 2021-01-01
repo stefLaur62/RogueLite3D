@@ -162,7 +162,7 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1081250035}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &71893704
+--- !u!1 &57899756
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -170,59 +170,94 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 71893705}
-  - component: {fileID: 71893707}
-  - component: {fileID: 71893706}
+  - component: {fileID: 57899757}
+  - component: {fileID: 57899759}
+  - component: {fileID: 57899758}
   m_Layer: 0
-  m_Name: Dungeon1_Hall
+  m_Name: Object Sprite
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &71893705
+--- !u!4 &57899757
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71893704}
-  m_LocalRotation: {x: -0, y: 0.21533188, z: -0, w: 0.9765409}
-  m_LocalPosition: {x: 66.568, y: -10.78, z: 74.994}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 57899756}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.25, y: 0.25, z: 0}
   m_Children: []
-  m_Father: {fileID: 2093549618}
-  m_RootOrder: 1
-  m_LocalEulerAnglesHint: {x: 0, y: 24.87, z: 0}
---- !u!114 &71893706
+  m_Father: {fileID: 820081195}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &57899758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71893704}
+  m_GameObject: {fileID: 57899756}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63541e8e7c357a64fa26590e89228b99, type: 3}
+  m_Script: {fileID: 11500000, guid: 225aa02bebb8ad34fb93ae332b8a383e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Dungeon1_Hall
-  player: {fileID: 614370859}
-  PlayerCamera: {fileID: 963194225}
-  PlayerHUD: {fileID: 44313699}
---- !u!65 &71893707
-BoxCollider:
+  _camera: {fileID: 963194227}
+--- !u!212 &57899759
+SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 71893704}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
+  m_GameObject: {fileID: 57899756}
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.79111, y: 2.0676804, z: 2.3100662}
-  m_Center: {x: -0.32289487, y: 0.03384018, z: 0.1550331}
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_Sprite: {fileID: 21300000, guid: c8f0eb68a23b70246a163824c28cad9e, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 10, y: 10}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+  m_SpriteSortPoint: 0
 --- !u!1 &167952532
 GameObject:
   m_ObjectHideFlags: 0
@@ -685,7 +720,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 614370859}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 78.16, y: 1.78, z: 64.43}
+  m_LocalPosition: {x: 31.62, y: 1.78, z: 15.18}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 614009196}
@@ -1067,7 +1102,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   item: {fileID: 11400000, guid: 25e64480b874a624b80acc14aa096e3d, type: 2}
---- !u!1 &835080942
+--- !u!1 &820081194
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -1075,59 +1110,57 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 835080943}
-  - component: {fileID: 835080945}
-  - component: {fileID: 835080944}
+  - component: {fileID: 820081195}
+  - component: {fileID: 820081197}
+  - component: {fileID: 820081196}
   m_Layer: 0
-  m_Name: Dungeon1_FinalRoom
+  m_Name: Item (5)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &835080943
+--- !u!4 &820081195
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835080942}
-  m_LocalRotation: {x: 0, y: -0.5336145, z: 0, w: 0.84572786}
-  m_LocalPosition: {x: 90.26, y: -17.69, z: 58.83}
+  m_GameObject: {fileID: 820081194}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 17.26, y: 1.7, z: 22.96}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2093549618}
-  m_RootOrder: 2
-  m_LocalEulerAnglesHint: {x: 0, y: -64.5, z: 0}
---- !u!114 &835080944
+  m_Children:
+  - {fileID: 57899757}
+  m_Father: {fileID: 925505094}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &820081196
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 820081194}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.5
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &820081197
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835080942}
+  m_GameObject: {fileID: 820081194}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63541e8e7c357a64fa26590e89228b99, type: 3}
+  m_Script: {fileID: 11500000, guid: 633c8b2c939014d419ee2416ea9bb3c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sceneName: Dungeon1
-  player: {fileID: 614370859}
-  PlayerCamera: {fileID: 963194225}
-  PlayerHUD: {fileID: 44313699}
---- !u!65 &835080945
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 835080942}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 3.79111, y: 2.0676804, z: 2.3100662}
-  m_Center: {x: -0.32289487, y: 0.03384018, z: 0.1550331}
+  item: {fileID: 11400000, guid: 02d29a1cce1445743ac221264414485b, type: 2}
 --- !u!1 &884840361
 GameObject:
   m_ObjectHideFlags: 0
@@ -1222,70 +1255,10 @@ Transform:
   - {fileID: 1185706215}
   - {fileID: 408126073}
   - {fileID: 756980369}
+  - {fileID: 820081195}
   m_Father: {fileID: 0}
   m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &934447356
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 934447357}
-  - component: {fileID: 934447359}
-  - component: {fileID: 934447358}
-  m_Layer: 0
-  m_Name: Dungeon1_Entrance
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &934447357
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934447356}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 81.271, y: 0, z: 71.406}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children: []
-  m_Father: {fileID: 2093549618}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &934447358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934447356}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 63541e8e7c357a64fa26590e89228b99, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  sceneName: Dungeon1_Entrance
-  player: {fileID: 614370859}
-  PlayerCamera: {fileID: 963194225}
-  PlayerHUD: {fileID: 44313699}
---- !u!65 &934447359
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 934447356}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2, y: 2, z: 2}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &951710029
 GameObject:
   m_ObjectHideFlags: 0
@@ -1821,7 +1794,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1185706214}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 30.41, y: 8.73, z: 5.43}
+  m_LocalPosition: {x: 10.46, y: 1.7, z: 23.04}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 516774420}
@@ -2443,6 +2416,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2093549618}
+  - component: {fileID: 2093549620}
+  - component: {fileID: 2093549619}
   m_Layer: 0
   m_Name: Dungeon1
   m_TagString: Untagged
@@ -2458,15 +2433,41 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2093549617}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 80.77, y: 0, z: 70.794}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 934447357}
-  - {fileID: 71893705}
-  - {fileID: 835080943}
+  m_Children: []
   m_Father: {fileID: 894233943}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &2093549619
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093549617}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 2, y: 2, z: 2}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &2093549620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2093549617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 63541e8e7c357a64fa26590e89228b99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: Dungeon1
+  player: {fileID: 614370859}
+  PlayerCamera: {fileID: 963194225}
+  PlayerHUD: {fileID: 44313699}
 --- !u!1 &2114029333
 GameObject:
   m_ObjectHideFlags: 0
@@ -5818,6 +5819,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1878012661930971736, guid: 635228aeaed8f0541b52f472b278b69a,
         type: 3}
+      propertyPath: speed
+      value: 0.6
+      objectReference: {fileID: 0}
+    - target: {fileID: 1878012661930971736, guid: 635228aeaed8f0541b52f472b278b69a,
+        type: 3}
       propertyPath: player
       value: 
       objectReference: {fileID: 614370860}
@@ -6634,7 +6640,7 @@ PrefabInstance:
     - target: {fileID: 8803180977011147699, guid: 635228aeaed8f0541b52f472b278b69a,
         type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 4294967295
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8803180977021146608, guid: 635228aeaed8f0541b52f472b278b69a,
         type: 3}
@@ -9617,6 +9623,11 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 5541600960126607373, guid: b2988173e176724499fd9cb5a79d4240,
+        type: 3}
+      propertyPath: audioSource
+      value: 
+      objectReference: {fileID: 614370864}
     - target: {fileID: 5541600960126607374, guid: b2988173e176724499fd9cb5a79d4240,
         type: 3}
       propertyPath: m_Enabled

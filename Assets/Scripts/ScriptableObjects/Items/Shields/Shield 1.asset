@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9b08cb4487b1e645bbd5d2e6e3f9240, type: 3}
   m_Name: Shield 1
   m_EditorClassIdentifier: 
-  id: 0
   uiDisplay: {fileID: 21300000, guid: f73f68fe6815f5548a6c2a61b9e49add, type: 3}
+  stackable: 0
   type: 5
   description: 
-  buffs: []
+  data:
+    name: 
+    id: 0
+    buffs:
+    - attributes: 1
+      value: 0
+      min: 1
+      max: 5

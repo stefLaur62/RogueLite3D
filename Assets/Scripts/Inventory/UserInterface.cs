@@ -76,22 +76,36 @@ public abstract class UserInterface : MonoBehaviour
     public void OnEnter(GameObject obj)
     {
         MouseData.slotHover = obj;
+
+        Debug.Log("===========");
+
+        Item item = slotsOnInterface[obj].item;
+        if (item.buffs.Length > 0)
+        {
+            Debug.Log(slotsOnInterface[obj].item.buffs[0].attributes);
+            Debug.Log(slotsOnInterface[obj].item.buffs[0].value);
+            //to do
+        }
     }
     public void OnExit(GameObject obj)
     {
         MouseData.slotHover = null;
+
     }
     public void OnEnterInterface(GameObject obj)
     {
         MouseData.interfaceMouseIsOver = obj.GetComponent<UserInterface>();
+        
     }
     public void OnExitInterface(GameObject obj)
     {
-        MouseData.interfaceMouseIsOver = null;
+        //MouseData.interfaceMouseIsOver = null;
     }
 
     public void OnDragStart(GameObject obj)
     {
+        Debug.Log("Drag start");
+        Debug.Log(obj.name);
         MouseData.tempItem = createTempItem(obj);
     }
 

@@ -12,8 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1b8ceb8c3560e7a418bafedce12049d8, type: 3}
   m_Name: Armor 3
   m_EditorClassIdentifier: 
-  id: 8
   uiDisplay: {fileID: 21300000, guid: 358b32c00e9785d4aafdefa65723e9b0, type: 3}
+  stackable: 0
   type: 4
   description: 
-  buffs: []
+  data:
+    name: 
+    id: 8
+    buffs:
+    - attributes: 1
+      value: 0
+      min: 10
+      max: 15

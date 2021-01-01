@@ -15,7 +15,6 @@ public class PlayerFootSteps : MonoBehaviour
 
     private void Step()
     {
-        Debug.Log(audioSource);
         audioSource.PlayOneShot(getStepClip(),volume);
     }
     private AudioClip getStepClip()
