@@ -9,7 +9,6 @@ public class CreateGame : MonoBehaviour
     public Text classname;
     public Text gamename;
 
-    public DataManager dataManager;
     public GameData gameData;
     void Start()
     {
