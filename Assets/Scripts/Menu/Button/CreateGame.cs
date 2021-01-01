@@ -19,6 +19,8 @@ public class CreateGame : MonoBehaviour
     {
         if (gamename.text.Length > 0)
         {
+            //TODO: reset all player stats
+            gameData.money = 0;
             gameData.gameName = gamename.text;
             gameData.SetClass(classname.text);
             gameData.Save();
