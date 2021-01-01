@@ -20,7 +20,11 @@ public class CreateGame : MonoBehaviour
         if (gamename.text.Length > 0)
         {
             //TODO: reset all player stats
+            //TODO: reset inventory
             gameData.money = 0;
+            gameData.level = 1;
+            gameData.currentXp = 0;
+            gameData.attack = 1;
             gameData.gameName = gamename.text;
             gameData.SetClass(classname.text);
             gameData.Save();

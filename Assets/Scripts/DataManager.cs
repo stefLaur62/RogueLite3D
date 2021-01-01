@@ -97,4 +97,17 @@ public class DataManager : MonoBehaviour
             Debug.Log("No player");
         }
     }
+    public void AddXp(int amount)
+    {
+        Debug.Log(amount);
+        gameData.currentXp += amount;
+        int xpRequiredToLevelUp = (int)(gameData.level * 100 * 1.25f);
+        if(gameData.currentXp >= xpRequiredToLevelUp)
+        {
+            //level up
+            gameData.currentXp -= xpRequiredToLevelUp;
+            gameData.level++;
+            Debug.Log("Level: " + gameData.level);
+        }
+    }
 }

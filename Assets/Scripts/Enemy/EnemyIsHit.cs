@@ -11,6 +11,8 @@ public class EnemyIsHit : MonoBehaviour
     protected GameData gameData;
     [SerializeField]
     protected GameObject enemyDeathPrefab;
+    [SerializeField]
+    protected DataManager dataManager;
 
     void Start()
     {
@@ -31,7 +33,7 @@ public class EnemyIsHit : MonoBehaviour
     public void loseLife()
     {
         health -= playerDamage;
-        Debug.Log(health);
+        Debug.Log(-playerDamage + ":" +health);
     }
     public void isAlive()
     {
@@ -39,6 +41,12 @@ public class EnemyIsHit : MonoBehaviour
         {
             Destroy(this.gameObject);
             Instantiate(enemyDeathPrefab, transform.position+Vector3.up, Quaternion.identity);
+            dataManager.AddXp(GiveXp());
         }
+    }
+
+    private int GiveXp()
+    {
+        return Random.Range((gameData.level - 1) * 50, gameData.level * 50);
     }
 }

@@ -24,6 +24,7 @@ public class KnightHit : MonoBehaviour
         {
             Debug.Log("HIT");
             playerAttack.OnSwordHit(other);
+            Debug.Log("AFTER");
         }
     }
 }

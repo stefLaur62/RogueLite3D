@@ -16,9 +16,9 @@ MonoBehaviour:
   savePath: /GameData.save
   classId: 0
   money: 0
-  attack: 0
+  attack: 1
   defence: 0
-  health: 0
-  currentHealth: 0
-  level: 0
+  health: 200
+  currentHealth: 200
+  level: 1
   currentXp: 0

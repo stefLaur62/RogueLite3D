@@ -77,8 +77,6 @@ public abstract class UserInterface : MonoBehaviour
     {
         MouseData.slotHover = obj;
 
-        Debug.Log("===========");
-
         Item item = slotsOnInterface[obj].item;
         if (item.buffs.Length > 0)
         {
