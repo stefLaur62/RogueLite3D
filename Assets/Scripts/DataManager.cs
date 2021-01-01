@@ -29,27 +29,22 @@ public class DataManager : MonoBehaviour
     }
     public void FixedUpdate()
     {
-        //Save();
+        Save();
     }
     public void Save()
     {
         float saveInput = playerActionControls.Player.SaveGame.ReadValue<float>();
         if(saveInput > 0)
         {
-            //temporary
-            /*if (gameData.gameName.Length < 1)
-                gameData.gameName = "Caroke";*/
             gameData.Save();
             playerEquipment.Save(gameData.gameName);
             playerInventory.Save(gameData.gameName);
+            Debug.Log("Saved");
         }
 
     }
     public void Load()
     {
-        //temporary
-        /*if (gameData.gameName.Length < 1)
-            gameData.gameName = "Caroke";*/
         gameData.Load();
         gameData.currentHealth = gameData.health;
         SetMoneyHUD();
