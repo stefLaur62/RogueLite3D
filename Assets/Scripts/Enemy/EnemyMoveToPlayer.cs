@@ -11,12 +11,13 @@ public class EnemyMoveToPlayer : MonoBehaviour
     {
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(goal.position);
-        agent.stoppingDistance = 2f;
+        agent.stoppingDistance = 2.5f;
     }
 
     // Update is called once per frame
     void FixedUpdate()
     {
         agent.SetDestination(goal.position);
+        transform.LookAt(goal.position);
     }
 }

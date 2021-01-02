@@ -11,7 +11,7 @@ public class PlayerFootSteps : MonoBehaviour
     private AudioClip[] jumpClips;
     [SerializeField]
     private AudioSource audioSource;
-    private float volume = 1f;
+    private float volume = 0.8f;
 
     private void Step()
     {
@@ -21,12 +21,12 @@ public class PlayerFootSteps : MonoBehaviour
     {
         if (!isGrass())
         {
-            volume = 1f;
+            volume = 0.8f;
             return stepClips[0];
         }
         else
         {
-            volume = 0.1f;
+            volume = 0.07f;
             return stepClips[1];
         }
     }
@@ -40,7 +40,6 @@ public class PlayerFootSteps : MonoBehaviour
             {
                 return true;
             }
-
         }
         return false;
     }

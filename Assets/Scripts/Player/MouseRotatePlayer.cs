@@ -22,13 +22,8 @@ public class MouseRotatePlayer : MonoBehaviour
     void FixedUpdate()
     {
 
-        float mouseInput = playerActionControls.Player.MouseLook.ReadValue<float>();
-        if (mouseInput < -1)
-            mouseInput = -1;
-        else if (mouseInput > 1)
-            mouseInput = 1;
-
-        this.transform.Rotate(Vector3.up * mouseInput * mouseSensitivity * Time.fixedDeltaTime);
+        Vector2 mouseInput = playerActionControls.Player.MouseLook.ReadValue<Vector2>();
+        this.transform.Rotate(Vector3.up * mouseInput.normalized.x * mouseSensitivity * Time.fixedDeltaTime);
     }
 
     private void Awake()

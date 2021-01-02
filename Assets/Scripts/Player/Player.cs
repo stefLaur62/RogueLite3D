@@ -40,14 +40,11 @@ public class Player : MonoBehaviour
     private void OnApplicationQuit()
     {
         inventory.container.Clear();
-        inventory.container.Clear();
     }
 
     public void Update()
     {
-        float inventoryInput = playerActionControls.Player.OpenInventory.ReadValue<float>();
-
-        if (inventoryInput > 0)
+        if (playerActionControls.Player.OpenInventory.triggered)
         {
             inventoryScreen.SetActive(!inventoryScreen.activeSelf);
             if (inventoryScreen.activeSelf)
@@ -58,6 +55,10 @@ public class Player : MonoBehaviour
             {
                 Cursor.visible = false;
             }
+        }
+        if (playerActionControls.Player.Escape.triggered)
+        {
+            Debug.Log("Escape");
         }
     }
 }

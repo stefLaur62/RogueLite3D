@@ -46,13 +46,13 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""name"": ""MouseLook"",
                     ""type"": ""PassThrough"",
                     ""id"": ""de5b40df-dd38-4097-ade0-ae7647162f82"",
-                    ""expectedControlType"": ""Button"",
+                    ""expectedControlType"": """",
                     ""processors"": """",
                     ""interactions"": """"
                 },
                 {
                     ""name"": ""OpenInventory"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""410744dd-e2f1-4642-ba6e-71736132dcb6"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -87,6 +87,14 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""type"": ""PassThrough"",
                     ""id"": ""e4a225fb-9a24-443e-934a-755f440b48de"",
                     ""expectedControlType"": """",
+                    ""processors"": """",
+                    ""interactions"": """"
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""PassThrough"",
+                    ""id"": ""1116d1c8-3731-4154-a760-37a5aadaa64a"",
+                    ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """"
                 }
@@ -324,70 +332,26 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""Mouse"",
-                    ""id"": ""5d304764-5632-47fe-af94-79c1e08611c8"",
-                    ""path"": ""1DAxis(whichSideWins=1)"",
+                    ""name"": """",
+                    ""id"": ""12f4c300-8381-4d2b-8a34-572f5595f556"",
+                    ""path"": ""<Mouse>/delta"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MouseLook"",
-                    ""isComposite"": true,
+                    ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
                 {
-                    ""name"": ""negative"",
-                    ""id"": ""31772516-6023-48cb-9e97-979a6c55b520"",
-                    ""path"": ""<Mouse>/delta/x"",
+                    ""name"": """",
+                    ""id"": ""d7cfa03a-32c4-4171-a297-6e3d65913d12"",
+                    ""path"": ""<Gamepad>/rightStick"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""MouseLook"",
                     ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""c16d5188-ea6a-41df-8554-ce9ed27d0635"",
-                    ""path"": ""<Mouse>/delta/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseLook"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""Gamepad"",
-                    ""id"": ""4d3b06e6-7f70-4fbd-a14a-eb3cf0988702"",
-                    ""path"": ""1DAxis(whichSideWins=1)"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseLook"",
-                    ""isComposite"": true,
                     ""isPartOfComposite"": false
-                },
-                {
-                    ""name"": ""negative"",
-                    ""id"": ""9da4a434-eaa7-4733-9c80-4d0eb67704d5"",
-                    ""path"": ""<Gamepad>/rightStick/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseLook"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
-                },
-                {
-                    ""name"": ""positive"",
-                    ""id"": ""93d4df88-8c77-4dad-908f-b5f8dcfa1811"",
-                    ""path"": ""<Gamepad>/rightStick/x"",
-                    ""interactions"": """",
-                    ""processors"": """",
-                    ""groups"": """",
-                    ""action"": ""MouseLook"",
-                    ""isComposite"": false,
-                    ""isPartOfComposite"": true
                 },
                 {
                     ""name"": """",
@@ -542,6 +506,17 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""action"": ""MousePosition"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a70fedef-51ea-43bf-a708-84654f650ef6"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -559,6 +534,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         m_Player_SaveGame = m_Player.FindAction("SaveGame", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
+        m_Player_Escape = m_Player.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -617,6 +593,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_SaveGame;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_MousePosition;
+    private readonly InputAction m_Player_Escape;
     public struct PlayerActions
     {
         private @PlayerActionControls m_Wrapper;
@@ -630,6 +607,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         public InputAction @SaveGame => m_Wrapper.m_Player_SaveGame;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
+        public InputAction @Escape => m_Wrapper.m_Player_Escape;
         public InputActionMap Get() { return m_Wrapper.m_Player; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -666,6 +644,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @MousePosition.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
                 @MousePosition.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
                 @MousePosition.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnMousePosition;
+                @Escape.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
+                @Escape.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
+                @Escape.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnEscape;
             }
             m_Wrapper.m_PlayerActionsCallbackInterface = instance;
             if (instance != null)
@@ -697,6 +678,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @MousePosition.started += instance.OnMousePosition;
                 @MousePosition.performed += instance.OnMousePosition;
                 @MousePosition.canceled += instance.OnMousePosition;
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
             }
         }
     }
@@ -712,5 +696,6 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         void OnSaveGame(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
     }
 }

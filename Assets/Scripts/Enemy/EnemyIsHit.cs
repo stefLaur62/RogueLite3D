@@ -12,6 +12,8 @@ public class EnemyIsHit : MonoBehaviour
     [SerializeField]
     protected GameObject enemyDeathPrefab;
     [SerializeField]
+    protected GameObject moneyPrefab;
+    [SerializeField]
     protected DataManager dataManager;
 
     void Start()
@@ -41,6 +43,7 @@ public class EnemyIsHit : MonoBehaviour
         {
             Destroy(this.gameObject);
             Instantiate(enemyDeathPrefab, transform.position+Vector3.up, Quaternion.identity);
+            Instantiate(moneyPrefab, transform.position + Vector3.up, Quaternion.identity);
             dataManager.AddXp(GiveXp());
         }
     }

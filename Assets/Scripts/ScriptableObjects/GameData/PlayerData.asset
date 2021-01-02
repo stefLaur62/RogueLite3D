@@ -20,5 +20,5 @@ MonoBehaviour:
   defence: 0
   health: 200
   currentHealth: 200
-  level: 1
-  currentXp: 0
+  level: 3
+  currentXp: 60

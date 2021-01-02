@@ -36,7 +36,7 @@ public class StopSoundPlayNew : MonoBehaviour
         // loop until we reach the end of the linear interpolation
         while (progress < 0.1f)
         {
-            progress += Time.unscaledDeltaTime / 7.0f;
+            progress += Time.unscaledDeltaTime / 20.0f;
             audio1.volume = 0.1f - progress;
             audio2.volume = progress;
             yield return null;

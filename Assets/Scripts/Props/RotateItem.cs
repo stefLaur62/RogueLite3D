@@ -4,13 +4,11 @@ using UnityEngine;
 
 public class RotateItem : MonoBehaviour
 {
-    // Start is called before the first frame update
     void Start()
     {
-        
+        this.transform.Rotate(new Vector3(-90, 0, 0));
     }
 
-    // Update is called once per frame
     void FixedUpdate()
     {
         this.transform.Rotate(new Vector3(0,0,1));

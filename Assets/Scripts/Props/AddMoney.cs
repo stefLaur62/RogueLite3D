@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class AddMoney : MonoBehaviour
 {
-    [SerializeField]
     private DataManager dataManager;
     private int amount;
     void Start()
     {
+        dataManager = GameObject.FindObjectOfType<DataManager>();
         amount = Random.Range(3, 10);
     }
 
