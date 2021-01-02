@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class EscapeMenu : MonoBehaviour
+public class InGameHUD : MonoBehaviour
 {
    public void LeaveGame()
     {
@@ -25,5 +25,9 @@ public class EscapeMenu : MonoBehaviour
     public void Options()
     {
         Debug.Log("TODO");
+    }
+    public void Respawn()
+    {
+        SceneManager.LoadScene("Village");
     }
 }

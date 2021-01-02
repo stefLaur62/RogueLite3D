@@ -26,7 +26,7 @@ public class PlayerAttack : MonoBehaviour
 
     private void Awake()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
         playerActionControls = new PlayerActionControls();
     }
 

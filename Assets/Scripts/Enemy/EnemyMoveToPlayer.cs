@@ -1,23 +1,45 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
 public class EnemyMoveToPlayer : MonoBehaviour
 {
-    public Transform goal;
-    NavMeshAgent agent;
+    [SerializeField]
+    private Transform player;
+    private NavMeshAgent agent;
+    [SerializeField]
+    private float maxDistance = 5f;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
-        agent.SetDestination(goal.position);
+        agent.SetDestination(player.position);
         agent.stoppingDistance = 2.5f;
+        agent.autoBraking = true;
+       
     }
 
     // Update is called once per frame
     void FixedUpdate()
+    { 
+        transform.LookAt(player.position);
+        checkDistance();
+    }
+
+    private void checkDistance()
     {
-        agent.SetDestination(goal.position);
-        transform.LookAt(goal.position);
+        float distance = Vector3.Distance(player.position, transform.position);
+
+        if (distance <= maxDistance)
+        {
+            agent.enabled = true;
+            agent.SetDestination(player.position);
+        }
+
+        else
+        {
+            this.agent.enabled = false;
+        }
     }
 }

@@ -803,8 +803,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 235}
-  m_SizeDelta: {x: 255.88641, y: 82.501526}
+  m_AnchoredPosition: {x: 0, y: 263}
+  m_SizeDelta: {x: 400, y: 82.501526}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &655767661
 MonoBehaviour:
@@ -827,12 +827,12 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 50
+    m_Font: {fileID: 12800000, guid: 5dd49b3eacc540408c98eee0de38e0f1, type: 3}
+    m_FontSize: 70
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 50
+    m_MaxSize: 70
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1791,6 +1791,11 @@ MonoBehaviour:
   gameData: {fileID: 11400000, guid: 4b8d816162b29554d8d109fe64ef3846, type: 2}
   playerInventory: {fileID: 11400000, guid: 21cb2dc7eef04a447a43dd382651b87c, type: 2}
   playerEquipment: {fileID: 11400000, guid: 32cd860aab962cf4aa62f75b80254ee7, type: 2}
+  healthBar: {fileID: 0}
+  moneyHud: {fileID: 0}
+  knight: {fileID: 0}
+  sorcerer: {fileID: 0}
+  followCamera: {fileID: 0}
 --- !u!4 &2079654091
 Transform:
   m_ObjectHideFlags: 0
