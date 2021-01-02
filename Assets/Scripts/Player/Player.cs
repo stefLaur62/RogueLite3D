@@ -8,6 +8,7 @@ public class Player : MonoBehaviour
 
     public InventoryObject inventory;
     public GameObject inventoryScreen;
+    public GameObject escapeScreen;
     public void Start()
     {
 
@@ -59,6 +60,15 @@ public class Player : MonoBehaviour
         if (playerActionControls.Player.Escape.triggered)
         {
             Debug.Log("Escape");
+            escapeScreen.SetActive(!escapeScreen.activeSelf);
+            if (escapeScreen.activeSelf)
+            {
+                Cursor.visible = true;
+            }
+            else
+            {
+                Cursor.visible = false;
+            }
         }
     }
 }

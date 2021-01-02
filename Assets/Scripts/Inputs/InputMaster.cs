@@ -92,7 +92,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 },
                 {
                     ""name"": ""Escape"",
-                    ""type"": ""PassThrough"",
+                    ""type"": ""Button"",
                     ""id"": ""1116d1c8-3731-4154-a760-37a5aadaa64a"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -511,6 +511,17 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""name"": """",
                     ""id"": ""a70fedef-51ea-43bf-a708-84654f650ef6"",
                     ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""e6d6c703-73eb-4177-bddf-49e062696411"",
+                    ""path"": ""<Gamepad>/start"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
