@@ -16,9 +16,11 @@ public class EnemyIsHit : MonoBehaviour
     [SerializeField]
     protected DataManager dataManager;
 
+    private PlayerAttack playerAttack;
     void Start()
     {
-        playerDamage = gameData.attack * 5;
+        playerAttack = FindObjectOfType<PlayerAttack>();
+        Debug.Log(playerAttack.GetDamage());
     }
 
     void Update()

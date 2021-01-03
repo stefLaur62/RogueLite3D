@@ -13,6 +13,9 @@ public abstract class UserInterface : MonoBehaviour
     protected Dictionary<GameObject, InventorySlot> slotsOnInterface = new Dictionary<GameObject, InventorySlot>();
 
     private PlayerActionControls playerActionControls;
+    [SerializeField]
+    private GameObject displayItemDescriptionPrefab;
+    private GameObject tempDisplay;
     void Start()
     {
         for (int i = 0; i < inventory.container.items.Length; i++)
@@ -76,19 +79,22 @@ public abstract class UserInterface : MonoBehaviour
     public void OnEnter(GameObject obj)
     {
         MouseData.slotHover = obj;
-
-        Item item = slotsOnInterface[obj].item;
-        if (item.buffs.Length > 0)
-        {
-            Debug.Log(slotsOnInterface[obj].item.buffs[0].attributes);
-            Debug.Log(slotsOnInterface[obj].item.buffs[0].value);
-            //to do
-        }
+        DisplayItemBuffs(obj);
+        
     }
+
+    private void DisplayItemBuffs(GameObject obj)
+    {
+        tempDisplay = Instantiate(displayItemDescriptionPrefab, transform.parent.position, Quaternion.identity);
+        tempDisplay.transform.SetParent(gameObject.transform);
+        tempDisplay.transform.position = new Vector3(736, 437, 0);
+        tempDisplay.GetComponent<DisplayItemDescription>().SetItem(slotsOnInterface[obj].item);
+    }
+
     public void OnExit(GameObject obj)
     {
         MouseData.slotHover = null;
-
+        Destroy(tempDisplay);
     }
     public void OnEnterInterface(GameObject obj)
     {

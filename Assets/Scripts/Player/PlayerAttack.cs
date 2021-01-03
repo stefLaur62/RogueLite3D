@@ -14,9 +14,26 @@ public class PlayerAttack : MonoBehaviour
     private bool mageAttackDone = false;
     [SerializeField]
     private GameObject mageAttackImpactPrefab;
+
+    private int currentDamage;
+    [SerializeField]
+    private StaticInterface playerEquipment;
+
     void Start()
     {
         SetAnimator();
+        currentDamage = GetDamage();
+    }
+
+    public int GetDamage()
+    {
+        if (playerEquipment != null)
+        {
+            return 20;
+        } else
+        {
+            return 5;
+        }
     }
 
     void Update()
