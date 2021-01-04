@@ -23,6 +23,7 @@ public class PlayerDead : MonoBehaviour
     public void PlayerIsDead()
     {
         //Reset player to village
+        //PauseGame
         animator.SetTrigger("Death");
         deathHUD.SetActive(true);
         audioSource.PlayOneShot(deathClip);

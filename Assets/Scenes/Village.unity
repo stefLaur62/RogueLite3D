@@ -561,7 +561,6 @@ MonoBehaviour:
   moneyHud: {fileID: 1936342593}
   knight: {fileID: 322517433}
   sorcerer: {fileID: 990795474}
-  followCamera: {fileID: 963194229}
 --- !u!1 &192935644
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,6 +863,7 @@ GameObject:
   - component: {fileID: 247888126}
   - component: {fileID: 247888125}
   - component: {fileID: 247888124}
+  - component: {fileID: 247888131}
   m_Layer: 0
   m_Name: EnemyDarkElf (1)
   m_TagString: Enemy
@@ -887,6 +887,8 @@ MonoBehaviour:
   gameData: {fileID: 11400000, guid: 4b8d816162b29554d8d109fe64ef3846, type: 2}
   enemyDeathPrefab: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
   moneyPrefab: {fileID: 5185884801711109259, guid: 229b8e6e467e2ca4e8e9e84daac25e31,
+    type: 3}
+  itemPrefab: {fileID: 4666565250182677974, guid: a87d215ad1435bf4ab79addf36426ca7,
     type: 3}
   dataManager: {fileID: 167952534}
 --- !u!114 &247888125
@@ -964,7 +966,7 @@ Animator:
   m_GameObject: {fileID: 247888123}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: be73df03abf02284486d1afabcf5d4fe, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbfc5feb99e8c1e40bcd48821c9521f5, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -998,6 +1000,20 @@ Transform:
   m_Father: {fileID: 1218398491}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &247888131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 247888123}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b9c67182b28a949a0c947185f8c011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 614370860}
+  attackDistance: 3
 --- !u!114 &253351444 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6400217311856939673, guid: d3c5c12f62bd3344a87f082f58547efd,
@@ -1676,6 +1692,7 @@ GameObject:
   - component: {fileID: 386955296}
   - component: {fileID: 386955295}
   - component: {fileID: 386955294}
+  - component: {fileID: 386955301}
   m_Layer: 0
   m_Name: EnemyDarkElf (2)
   m_TagString: Enemy
@@ -1699,6 +1716,8 @@ MonoBehaviour:
   gameData: {fileID: 11400000, guid: 4b8d816162b29554d8d109fe64ef3846, type: 2}
   enemyDeathPrefab: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
   moneyPrefab: {fileID: 5185884801711109259, guid: 229b8e6e467e2ca4e8e9e84daac25e31,
+    type: 3}
+  itemPrefab: {fileID: 4666565250182677974, guid: a87d215ad1435bf4ab79addf36426ca7,
     type: 3}
   dataManager: {fileID: 167952534}
 --- !u!114 &386955295
@@ -1776,7 +1795,7 @@ Animator:
   m_GameObject: {fileID: 386955293}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: be73df03abf02284486d1afabcf5d4fe, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbfc5feb99e8c1e40bcd48821c9521f5, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
@@ -1810,6 +1829,20 @@ Transform:
   m_Father: {fileID: 1218398491}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &386955301
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 386955293}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b9c67182b28a949a0c947185f8c011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 614370860}
+  attackDistance: 3
 --- !u!1 &408126072
 GameObject:
   m_ObjectHideFlags: 0
@@ -3378,7 +3411,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 820081194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 17.26, y: 1.7, z: 22.96}
+  m_LocalPosition: {x: 17.26, y: 1.7, z: 24.54}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 57899757}
@@ -9265,6 +9298,7 @@ GameObject:
   - component: {fileID: 1566048869721649}
   - component: {fileID: 1566048869721650}
   - component: {fileID: 1566048869721646}
+  - component: {fileID: 1566048869721651}
   m_Layer: 0
   m_Name: EnemyDarkElf
   m_TagString: Enemy
@@ -9288,6 +9322,8 @@ MonoBehaviour:
   gameData: {fileID: 11400000, guid: 4b8d816162b29554d8d109fe64ef3846, type: 2}
   enemyDeathPrefab: {fileID: 100004, guid: 7867af58a6ec48846ae807eb4022fbaa, type: 3}
   moneyPrefab: {fileID: 5185884801711109259, guid: 229b8e6e467e2ca4e8e9e84daac25e31,
+    type: 3}
+  itemPrefab: {fileID: 4666565250182677974, guid: a87d215ad1435bf4ab79addf36426ca7,
     type: 3}
   dataManager: {fileID: 167952534}
 --- !u!65 &1566048869721647
@@ -9354,7 +9390,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 614370860}
-  maxDistance: 10
+  maxDistance: 5
+--- !u!114 &1566048869721651
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1566048869721645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45b9c67182b28a949a0c947185f8c011, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 614370860}
+  attackDistance: 3
 --- !u!1 &1567112142307821
 GameObject:
   m_ObjectHideFlags: 0
@@ -10766,7 +10816,7 @@ Animator:
   m_GameObject: {fileID: 1566048869721645}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: be73df03abf02284486d1afabcf5d4fe, type: 3}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cbfc5feb99e8c1e40bcd48821c9521f5, type: 2}
   m_CullingMode: 1
   m_UpdateMode: 0
   m_ApplyRootMotion: 1

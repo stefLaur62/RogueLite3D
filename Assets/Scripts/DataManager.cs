@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using UnityEditor;
@@ -18,7 +19,6 @@ public class DataManager : MonoBehaviour
     public GameObject knight;
     public GameObject sorcerer;
 
-    public FollowCamera followCamera;
     public void Awake()
     {
         playerActionControls = new PlayerActionControls();
@@ -51,6 +51,12 @@ public class DataManager : MonoBehaviour
         playerEquipment.Load(gameData.gameName);
         playerInventory.Load(gameData.gameName);
     }
+
+    public void DropItem(Vector3 position)
+    {
+        
+    }
+
     private void OnEnable()
     {
         playerActionControls.Enable();

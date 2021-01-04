@@ -24,10 +24,10 @@ public class EnemyMoveToPlayer : MonoBehaviour
     void FixedUpdate()
     { 
         transform.LookAt(player.position);
-        checkDistance();
+        CheckDistance();
     }
 
-    private void checkDistance()
+    private void CheckDistance()
     {
         float distance = Vector3.Distance(player.position, transform.position);
 
