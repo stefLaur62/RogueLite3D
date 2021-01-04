@@ -20,7 +20,6 @@ public class EnemyIsHit : MonoBehaviour
     void Start()
     {
         playerAttack = FindObjectOfType<PlayerAttack>();
-        Debug.Log(playerAttack.GetDamage());
     }
 
     void Update()
@@ -30,14 +29,13 @@ public class EnemyIsHit : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Trigger");
         if (other.gameObject.tag == "Weapon")
             loseLife();
     }
     public void loseLife()
     {
-        health -= playerDamage;
-        Debug.Log(-playerDamage + ":" +health);
+        health -= playerAttack.GetDamage();
+        Debug.Log(-playerAttack.GetDamage() + ":" +health);
     }
     public void isAlive()
     {

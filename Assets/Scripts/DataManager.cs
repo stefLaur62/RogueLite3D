@@ -99,7 +99,6 @@ public class DataManager : MonoBehaviour
     }
     public void AddXp(int amount)
     {
-        Debug.Log(amount);
         gameData.currentXp += amount;
         int xpRequiredToLevelUp = (int)(gameData.level * 100 * 1.25f);
         if(gameData.currentXp >= xpRequiredToLevelUp)

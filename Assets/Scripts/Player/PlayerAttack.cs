@@ -18,6 +18,7 @@ public class PlayerAttack : MonoBehaviour
     private int currentDamage;
     [SerializeField]
     private StaticInterface playerEquipment;
+    private int itemAttackBonus = 0;
 
     void Start()
     {
@@ -29,11 +30,38 @@ public class PlayerAttack : MonoBehaviour
     {
         if (playerEquipment != null)
         {
-            return 20;
+            if (playerEquipment.inventory.container.items[1].item.id != -1)
+            {
+                return playerEquipment.inventory.container.items[1].item.buffs[0].value * (gameData.attack + itemAttackBonus);
+            }
+            else
+            {
+                return 5 * (gameData.attack + itemAttackBonus);
+            }
         } else
         {
             return 5;
         }
+    }
+
+    public void SetAttackBonus()
+    {
+        int attackBonus = 0;
+        for (int i = 0; i < playerEquipment.inventory.container.items.Length; i++)
+        {
+            if (playerEquipment.inventory.container.items[i].item.id != -1)
+            {
+                foreach (ItemBuff buff in playerEquipment.inventory.container.items[i].item.buffs)
+                {
+                    if (buff.attributes == Attributes.Attack)
+                    {
+                        attackBonus += buff.value;
+                    }
+                }
+            }
+        }
+        Debug.Log("Attack bonus:" + attackBonus);
+        itemAttackBonus = attackBonus;
     }
 
     void Update()
@@ -110,21 +138,17 @@ public class PlayerAttack : MonoBehaviour
     }
     private void MageAttack()
     {
-        Debug.Log("Boom");
         mageAttackDone = true;
 
         RaycastHit hit;
         if (Physics.Raycast(transform.position + Vector3.up, transform.forward, out hit, Mathf.Infinity))
         {
-            Debug.DrawRay(transform.position + Vector3.up, transform.forward * hit.distance, Color.red, 10);
 
             //Spawn effect
             Instantiate(mageAttackImpactPrefab, hit.point, Quaternion.identity);
             
             if (hit.collider.gameObject.tag == "Enemy")
             {
-                //Damage enemy
-                Debug.Log("TT");
                 EnemyIsHit enemyScript = hit.collider.gameObject.GetComponent<EnemyIsHit>();
                 enemyScript.loseLife();
             }

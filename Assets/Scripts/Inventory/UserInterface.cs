@@ -16,6 +16,8 @@ public abstract class UserInterface : MonoBehaviour
     [SerializeField]
     private GameObject displayItemDescriptionPrefab;
     private GameObject tempDisplay;
+
+    private PlayerAttack playerAttack;
     void Start()
     {
         for (int i = 0; i < inventory.container.items.Length; i++)
@@ -25,6 +27,9 @@ public abstract class UserInterface : MonoBehaviour
         CreateSlot();
         AddEvent(gameObject, EventTriggerType.PointerEnter, delegate { OnEnterInterface(gameObject); });
         AddEvent(gameObject, EventTriggerType.PointerExit, delegate { OnExitInterface(gameObject); });
+
+        playerAttack = FindObjectOfType<PlayerAttack>();
+        GiveBonusToPlayer();
     }
 
     void Update()
@@ -85,10 +90,13 @@ public abstract class UserInterface : MonoBehaviour
 
     private void DisplayItemBuffs(GameObject obj)
     {
-        tempDisplay = Instantiate(displayItemDescriptionPrefab, transform.parent.position, Quaternion.identity);
-        tempDisplay.transform.SetParent(gameObject.transform);
-        tempDisplay.transform.position = new Vector3(736, 437, 0);
-        tempDisplay.GetComponent<DisplayItemDescription>().SetItem(slotsOnInterface[obj].item);
+        if (slotsOnInterface[obj].item.id >= 0 && slotsOnInterface[obj].item.buffs.Length > 0)
+        {
+            tempDisplay = Instantiate(displayItemDescriptionPrefab, transform.parent.position, Quaternion.identity);
+            tempDisplay.transform.SetParent(gameObject.transform);
+            tempDisplay.transform.position = new Vector3(736, 437, 0);
+            tempDisplay.GetComponent<DisplayItemDescription>().SetItem(slotsOnInterface[obj].item);
+        }
     }
 
     public void OnExit(GameObject obj)
@@ -103,13 +111,11 @@ public abstract class UserInterface : MonoBehaviour
     }
     public void OnExitInterface(GameObject obj)
     {
-        //MouseData.interfaceMouseIsOver = null;
+        MouseData.interfaceMouseIsOver = null;
     }
 
     public void OnDragStart(GameObject obj)
     {
-        Debug.Log("Drag start");
-        Debug.Log(obj.name);
         MouseData.tempItem = createTempItem(obj);
     }
 
@@ -141,13 +147,22 @@ public abstract class UserInterface : MonoBehaviour
         {
             InventorySlot mouseHoverSlotData = MouseData.interfaceMouseIsOver.slotsOnInterface[MouseData.slotHover];
             inventory.SwapItems(slotsOnInterface[obj], mouseHoverSlotData);
+            Debug.Log(MouseData.interfaceMouseIsOver.name == "Equipment Screen");
+            if(MouseData.interfaceMouseIsOver.name == "Equipment Screen")
+            {
+                GiveBonusToPlayer();
+            }
         }
-
     }
 
     public void OnDrag(GameObject obj)
     {
         if (MouseData.tempItem != null)
             MouseData.tempItem.GetComponent<RectTransform>().position = playerActionControls.Player.MousePosition.ReadValue<Vector2>();
-    }  
+    }
+
+    public void GiveBonusToPlayer()
+    {
+        playerAttack.SetAttackBonus();
+    }
 }

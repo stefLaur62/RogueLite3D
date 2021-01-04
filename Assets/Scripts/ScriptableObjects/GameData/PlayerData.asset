@@ -15,10 +15,10 @@ MonoBehaviour:
   gameName: Caroke
   savePath: /GameData.save
   classId: 0
-  money: 0
-  attack: 1
+  money: 22
+  attack: 2
   defence: 0
   health: 200
   currentHealth: 200
-  level: 3
-  currentXp: 60
+  level: 2
+  currentXp: 110
