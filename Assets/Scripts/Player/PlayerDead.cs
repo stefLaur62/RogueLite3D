@@ -13,12 +13,13 @@ public class PlayerDead : MonoBehaviour
     private GameData gameData;
     [SerializeField]
     private GameObject deathHUD;
+    [SerializeField]
+    private AudioSource backgroundAudioSource;
 
     public void Start()
     {
-        audioSource = this.gameObject.GetComponent<AudioSource>();
+        audioSource = GetComponent<AudioSource>();
         SetAnimator();
-        
     }
     public void PlayerIsDead()
     {
@@ -27,6 +28,8 @@ public class PlayerDead : MonoBehaviour
         animator.SetTrigger("Death");
         deathHUD.SetActive(true);
         Time.timeScale = 0;
+        SetCursor();
+        backgroundAudioSource.Stop();
         audioSource.PlayOneShot(deathClip);
     }
     private void SetAnimator()
@@ -34,5 +37,10 @@ public class PlayerDead : MonoBehaviour
         animator = GetComponentsInChildren<Animator>()[gameData.classId];
     }
 
+    private void SetCursor()
+    {
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.Confined;
+    }
 
 }

@@ -51,7 +51,6 @@ public class PlayerMovement : MonoBehaviour
     }
     private void SetPlayerAttack()
     {
-        Debug.Log(GetComponentsInChildren<PlayerAttack>().Length);
         playerAttack = GetComponentInChildren<PlayerAttack>();
     }
 

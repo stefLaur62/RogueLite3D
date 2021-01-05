@@ -19,6 +19,10 @@ public class DataManager : MonoBehaviour
     public GameObject knight;
     public GameObject sorcerer;
 
+    [SerializeField]
+    private AudioSource audioSource;
+    [SerializeField]
+    private AudioClip moneyClip;
     public void Awake()
     {
         playerActionControls = new PlayerActionControls();
@@ -46,11 +50,6 @@ public class DataManager : MonoBehaviour
         playerInventory.Load(gameData.gameName);
     }
 
-    public void DropItem(Vector3 position)
-    {
-        
-    }
-
     private void OnEnable()
     {
         playerActionControls.Enable();
@@ -73,6 +72,7 @@ public class DataManager : MonoBehaviour
     {
         gameData.money += amount;
         SetMoneyHUD();
+        audioSource.PlayOneShot(moneyClip);
     }
     public void SetMoneyHUD()
     {
@@ -106,7 +106,7 @@ public class DataManager : MonoBehaviour
             //level up
             gameData.currentXp -= xpRequiredToLevelUp;
             gameData.level++;
-            //increase player stats
+            //tempory increase player stats
             gameData.attack++;
             gameData.defence++;
         }

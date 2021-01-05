@@ -6369,6 +6369,11 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6162752763131087977, guid: 197deea3584294c4fbb35404e942415f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.15
+      objectReference: {fileID: 0}
     - target: {fileID: 6162752763131087978, guid: 197deea3584294c4fbb35404e942415f,
         type: 3}
       propertyPath: escapeScreen
@@ -6389,6 +6394,11 @@ PrefabInstance:
       propertyPath: deathHUD
       value: 
       objectReference: {fileID: 1347124420}
+    - target: {fileID: 6162752763131087980, guid: 197deea3584294c4fbb35404e942415f,
+        type: 3}
+      propertyPath: backgroundAudioSource
+      value: 
+      objectReference: {fileID: 2114029335}
     - target: {fileID: 6162752763131087981, guid: 197deea3584294c4fbb35404e942415f,
         type: 3}
       propertyPath: m_Center.y
@@ -6466,6 +6476,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6162752763131087991, guid: 197deea3584294c4fbb35404e942415f,
         type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 1347124425}
+    - target: {fileID: 6162752763131087991, guid: 197deea3584294c4fbb35404e942415f,
+        type: 3}
+      propertyPath: mageAttackClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a9ad7a07a25d084687cdcd509b5c182, type: 3}
+    - target: {fileID: 6162752763131087991, guid: 197deea3584294c4fbb35404e942415f,
+        type: 3}
       propertyPath: playerEquipment
       value: 
       objectReference: {fileID: 1347124422}
@@ -6496,6 +6516,12 @@ GameObject:
 --- !u!1 &355192448 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6162752763665722479, guid: 197deea3584294c4fbb35404e942415f,
+    type: 3}
+  m_PrefabInstance: {fileID: 355192445}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &355192449 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6162752763131087977, guid: 197deea3584294c4fbb35404e942415f,
     type: 3}
   m_PrefabInstance: {fileID: 355192445}
   m_PrefabAsset: {fileID: 0}
@@ -31796,6 +31822,8 @@ MonoBehaviour:
   moneyHud: {fileID: 1347124424}
   knight: {fileID: 355192448}
   sorcerer: {fileID: 355192447}
+  audioSource: {fileID: 355192449}
+  moneyClip: {fileID: 8300000, guid: 4bf6a65792076824b812c6ebf0369135, type: 3}
 --- !u!1001 &1655441259
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -40855,7 +40883,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 3d05c36ea0a3c2643afd13d4ade625da, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.136
+  m_Volume: 0.1
   m_Pitch: 1
   Loop: 1
   Mute: 0

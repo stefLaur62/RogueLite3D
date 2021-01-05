@@ -301,6 +301,8 @@ MonoBehaviour:
   moneyHud: {fileID: 8923230776500775612}
   knight: {fileID: 322517433}
   sorcerer: {fileID: 990795474}
+  audioSource: {fileID: 1257104221}
+  moneyClip: {fileID: 8300000, guid: 4bf6a65792076824b812c6ebf0369135, type: 3}
 --- !u!1 &245128093
 GameObject:
   m_ObjectHideFlags: 0
@@ -1330,6 +1332,12 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!82 &1257104221 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 6162752763131087977, guid: 197deea3584294c4fbb35404e942415f,
+    type: 3}
+  m_PrefabInstance: {fileID: 6162752763590787673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1345714402
 GameObject:
   m_ObjectHideFlags: 0
@@ -1555,7 +1563,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1098af86014d56d45abc38a64416974a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.25
+  m_Volume: 0.05
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -2821,6 +2829,11 @@ PrefabInstance:
         type: 3}
       propertyPath: Loop
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6912755241912184048, guid: 635228aeaed8f0541b52f472b278b69a,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.2
       objectReference: {fileID: 0}
     - target: {fileID: 6912755241912184048, guid: 635228aeaed8f0541b52f472b278b69a,
         type: 3}
@@ -6115,6 +6128,21 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6162752763131087977, guid: 197deea3584294c4fbb35404e942415f,
+        type: 3}
+      propertyPath: m_Volume
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162752763131087977, guid: 197deea3584294c4fbb35404e942415f,
+        type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6162752763131087977, guid: 197deea3584294c4fbb35404e942415f,
+        type: 3}
+      propertyPath: spreadCustomCurve.m_Curve.Array.data[0].value
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6162752763131087978, guid: 197deea3584294c4fbb35404e942415f,
         type: 3}
       propertyPath: escapeScreen
@@ -6135,6 +6163,11 @@ PrefabInstance:
       propertyPath: deathHUD
       value: 
       objectReference: {fileID: 3187818907507190920}
+    - target: {fileID: 6162752763131087980, guid: 197deea3584294c4fbb35404e942415f,
+        type: 3}
+      propertyPath: backgroundAudioSource
+      value: 
+      objectReference: {fileID: 1724171413}
     - target: {fileID: 6162752763131087986, guid: 197deea3584294c4fbb35404e942415f,
         type: 3}
       propertyPath: m_Name
@@ -6205,6 +6238,16 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6162752763131087991, guid: 197deea3584294c4fbb35404e942415f,
+        type: 3}
+      propertyPath: healthBar
+      value: 
+      objectReference: {fileID: 6400217312938115690}
+    - target: {fileID: 6162752763131087991, guid: 197deea3584294c4fbb35404e942415f,
+        type: 3}
+      propertyPath: mageAttackClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 7a9ad7a07a25d084687cdcd509b5c182, type: 3}
     - target: {fileID: 6162752763131087991, guid: 197deea3584294c4fbb35404e942415f,
         type: 3}
       propertyPath: playerEquipment

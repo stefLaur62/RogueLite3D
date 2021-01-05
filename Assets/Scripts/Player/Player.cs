@@ -11,7 +11,7 @@ public class Player : MonoBehaviour
     public GameObject escapeScreen;
     public void Start()
     {
-
+        SetCursor(false);
     }
     private void Awake()
     {
@@ -50,25 +50,33 @@ public class Player : MonoBehaviour
             inventoryScreen.SetActive(!inventoryScreen.activeSelf);
             if (inventoryScreen.activeSelf)
             {
-                Cursor.visible = true;
+                Time.timeScale = 0;
+                SetCursor(true);
             }
             else
             {
-                Cursor.visible = false;
+                Time.timeScale = 1;
+                SetCursor(false);
             }
         }
         if (playerActionControls.Player.Escape.triggered)
         {
-            Debug.Log("Escape");
             escapeScreen.SetActive(!escapeScreen.activeSelf);
             if (escapeScreen.activeSelf)
             {
-                Cursor.visible = true;
+                Time.timeScale = 0;
+                SetCursor(true);
             }
             else
             {
-                Cursor.visible = false;
+                Time.timeScale = 1;
+                SetCursor(false);
             }
         }
+    }
+    private void SetCursor(bool state)
+    {
+        Cursor.visible = state;
+        Cursor.lockState = CursorLockMode.Confined;
     }
 }

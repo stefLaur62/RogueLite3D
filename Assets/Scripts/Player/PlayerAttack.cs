@@ -24,11 +24,19 @@ public class PlayerAttack : MonoBehaviour
     private int basicDamage = 5;
 
     private PlayerDead playerDead;
+
+    [SerializeField]
+    private HealthBar healthBar;
+
+    [SerializeField]
+    private AudioClip mageAttackClip;
+    private AudioSource audioSource;
     void Start()
     {
         SetAnimator();
         currentDamage = GetDamage();
         playerDead = GetComponent<PlayerDead>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     public int GetDamage()
@@ -148,6 +156,7 @@ public class PlayerAttack : MonoBehaviour
     private void MageAttack()
     {
         mageAttackDone = true;
+        audioSource.PlayOneShot(mageAttackClip);
 
         RaycastHit hit;
         if (Physics.Raycast(transform.position + Vector3.up, transform.forward, out hit, Mathf.Infinity))
@@ -173,6 +182,7 @@ public class PlayerAttack : MonoBehaviour
         {
             gameData.currentHealth -= damage;
         }
+        healthBar.SetHealth(gameData.currentHealth);
         if (gameData.currentHealth <= 0)
             playerDead.PlayerIsDead();
     }
