@@ -21,12 +21,12 @@ public class PlayerFootSteps : MonoBehaviour
     {
         if (!isGrass())
         {
-            volume = 0.8f;
+            volume = 0.6f;
             return stepClips[0];
         }
         else
         {
-            volume = 0.07f;
+            volume = 0.06f;
             return stepClips[1];
         }
     }

@@ -163,6 +163,6 @@ public abstract class UserInterface : MonoBehaviour
 
     public void GiveBonusToPlayer()
     {
-        playerAttack.SetAttackBonus();
+        playerAttack.SetBonus();
     }
 }

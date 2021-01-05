@@ -29,18 +29,12 @@ public class DataManager : MonoBehaviour
     }
     public void FixedUpdate()
     {
-        Save();
     }
     public void Save()
     {
-        float saveInput = playerActionControls.Player.SaveGame.ReadValue<float>();
-        if(saveInput > 0)
-        {
-            gameData.Save();
-            playerEquipment.Save(gameData.gameName);
-            playerInventory.Save(gameData.gameName);
-            Debug.Log("Saved");
-        }
+        gameData.Save();
+        playerEquipment.Save(gameData.gameName);
+        playerInventory.Save(gameData.gameName);
 
     }
     public void Load()
@@ -112,7 +106,9 @@ public class DataManager : MonoBehaviour
             //level up
             gameData.currentXp -= xpRequiredToLevelUp;
             gameData.level++;
-            Debug.Log("Level: " + gameData.level);
+            //increase player stats
+            gameData.attack++;
+            gameData.defence++;
         }
     }
 }

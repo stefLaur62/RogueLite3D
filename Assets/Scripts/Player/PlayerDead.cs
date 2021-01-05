@@ -26,10 +26,13 @@ public class PlayerDead : MonoBehaviour
         //PauseGame
         animator.SetTrigger("Death");
         deathHUD.SetActive(true);
+        Time.timeScale = 0;
         audioSource.PlayOneShot(deathClip);
     }
     private void SetAnimator()
     {
         animator = GetComponentsInChildren<Animator>()[gameData.classId];
     }
+
+
 }

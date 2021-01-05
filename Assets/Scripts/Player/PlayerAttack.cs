@@ -19,11 +19,16 @@ public class PlayerAttack : MonoBehaviour
     [SerializeField]
     private StaticInterface playerEquipment;
     private int itemAttackBonus = 0;
+    private int itemDefenceBonus = 0;
+    [SerializeField]
+    private int basicDamage = 5;
 
+    private PlayerDead playerDead;
     void Start()
     {
         SetAnimator();
         currentDamage = GetDamage();
+        playerDead = GetComponent<PlayerDead>();
     }
 
     public int GetDamage()
@@ -32,21 +37,22 @@ public class PlayerAttack : MonoBehaviour
         {
             if (playerEquipment.inventory.container.items[1].item.id != -1)
             {
-                return playerEquipment.inventory.container.items[1].item.buffs[0].value * (gameData.attack + itemAttackBonus);
+                return (basicDamage + playerEquipment.inventory.container.items[1].item.buffs[0].value) * (gameData.attack + itemAttackBonus) ;
             }
             else
             {
-                return 5 * (gameData.attack + itemAttackBonus);
+                return basicDamage * (gameData.attack + itemAttackBonus);
             }
         } else
         {
-            return 5;
+            return basicDamage;
         }
     }
 
-    public void SetAttackBonus()
+    public void SetBonus()
     {
         int attackBonus = 0;
+        int defenceBonus = 0;
         for (int i = 0; i < playerEquipment.inventory.container.items.Length; i++)
         {
             if (playerEquipment.inventory.container.items[i].item.id != -1)
@@ -57,11 +63,15 @@ public class PlayerAttack : MonoBehaviour
                     {
                         attackBonus += buff.value;
                     }
+                    if (buff.attributes == Attributes.Defence)
+                    {
+                        defenceBonus += buff.value;
+                    }
                 }
             }
         }
-        Debug.Log("Attack bonus:" + attackBonus);
         itemAttackBonus = attackBonus;
+        itemDefenceBonus = defenceBonus;
     }
 
     void Update()
@@ -152,5 +162,18 @@ public class PlayerAttack : MonoBehaviour
                 enemyScript.loseLife();
             }
         }
+    }
+
+    public void LoseLife(int damage)
+    {
+        if(itemDefenceBonus + gameData.defence > 0)
+        {
+            gameData.currentHealth -= (int)(damage * ( 1f -(itemDefenceBonus + gameData.defence) / 100f));
+        } else
+        {
+            gameData.currentHealth -= damage;
+        }
+        if (gameData.currentHealth <= 0)
+            playerDead.PlayerIsDead();
     }
 }

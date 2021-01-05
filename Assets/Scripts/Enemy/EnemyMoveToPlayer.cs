@@ -11,11 +11,13 @@ public class EnemyMoveToPlayer : MonoBehaviour
     private NavMeshAgent agent;
     [SerializeField]
     private float maxDistance = 5f;
+    [SerializeField]
+    private float stoppingDistance = 2f;
     void Start()
     {
         agent = GetComponent<NavMeshAgent>();
         agent.SetDestination(player.position);
-        agent.stoppingDistance = 2.5f;
+        agent.stoppingDistance = stoppingDistance;
         agent.autoBraking = true;
        
     }

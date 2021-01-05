@@ -40,6 +40,7 @@ public class EnemyIsHit : MonoBehaviour
     }
     public void loseLife()
     {
+        Debug.Log(playerAttack.GetDamage());
         health -= playerAttack.GetDamage();
     }
     public void isAlive()
