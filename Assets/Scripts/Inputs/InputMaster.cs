@@ -67,8 +67,8 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""interactions"": """"
                 },
                 {
-                    ""name"": ""SaveGame"",
-                    ""type"": ""PassThrough"",
+                    ""name"": ""playerStat"",
+                    ""type"": ""Button"",
                     ""id"": ""c67b50fd-be00-4595-a26a-73b6836cef48"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
@@ -437,7 +437,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SaveGame"",
+                    ""action"": ""playerStat"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -448,7 +448,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SaveGame"",
+                    ""action"": ""playerStat"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -459,7 +459,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
-                    ""action"": ""SaveGame"",
+                    ""action"": ""playerStat"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 },
@@ -542,7 +542,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         m_Player_MouseLook = m_Player.FindAction("MouseLook", throwIfNotFound: true);
         m_Player_OpenInventory = m_Player.FindAction("OpenInventory", throwIfNotFound: true);
         m_Player_Walk = m_Player.FindAction("Walk", throwIfNotFound: true);
-        m_Player_SaveGame = m_Player.FindAction("SaveGame", throwIfNotFound: true);
+        m_Player_playerStat = m_Player.FindAction("playerStat", throwIfNotFound: true);
         m_Player_Interact = m_Player.FindAction("Interact", throwIfNotFound: true);
         m_Player_MousePosition = m_Player.FindAction("MousePosition", throwIfNotFound: true);
         m_Player_Escape = m_Player.FindAction("Escape", throwIfNotFound: true);
@@ -601,7 +601,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
     private readonly InputAction m_Player_MouseLook;
     private readonly InputAction m_Player_OpenInventory;
     private readonly InputAction m_Player_Walk;
-    private readonly InputAction m_Player_SaveGame;
+    private readonly InputAction m_Player_playerStat;
     private readonly InputAction m_Player_Interact;
     private readonly InputAction m_Player_MousePosition;
     private readonly InputAction m_Player_Escape;
@@ -615,7 +615,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         public InputAction @MouseLook => m_Wrapper.m_Player_MouseLook;
         public InputAction @OpenInventory => m_Wrapper.m_Player_OpenInventory;
         public InputAction @Walk => m_Wrapper.m_Player_Walk;
-        public InputAction @SaveGame => m_Wrapper.m_Player_SaveGame;
+        public InputAction @playerStat => m_Wrapper.m_Player_playerStat;
         public InputAction @Interact => m_Wrapper.m_Player_Interact;
         public InputAction @MousePosition => m_Wrapper.m_Player_MousePosition;
         public InputAction @Escape => m_Wrapper.m_Player_Escape;
@@ -646,9 +646,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Walk.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWalk;
                 @Walk.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWalk;
                 @Walk.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnWalk;
-                @SaveGame.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSaveGame;
-                @SaveGame.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSaveGame;
-                @SaveGame.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnSaveGame;
+                @playerStat.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlayerStat;
+                @playerStat.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlayerStat;
+                @playerStat.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnPlayerStat;
                 @Interact.started -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.performed -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
                 @Interact.canceled -= m_Wrapper.m_PlayerActionsCallbackInterface.OnInteract;
@@ -680,9 +680,9 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
                 @Walk.started += instance.OnWalk;
                 @Walk.performed += instance.OnWalk;
                 @Walk.canceled += instance.OnWalk;
-                @SaveGame.started += instance.OnSaveGame;
-                @SaveGame.performed += instance.OnSaveGame;
-                @SaveGame.canceled += instance.OnSaveGame;
+                @playerStat.started += instance.OnPlayerStat;
+                @playerStat.performed += instance.OnPlayerStat;
+                @playerStat.canceled += instance.OnPlayerStat;
                 @Interact.started += instance.OnInteract;
                 @Interact.performed += instance.OnInteract;
                 @Interact.canceled += instance.OnInteract;
@@ -704,7 +704,7 @@ public class @PlayerActionControls : IInputActionCollection, IDisposable
         void OnMouseLook(InputAction.CallbackContext context);
         void OnOpenInventory(InputAction.CallbackContext context);
         void OnWalk(InputAction.CallbackContext context);
-        void OnSaveGame(InputAction.CallbackContext context);
+        void OnPlayerStat(InputAction.CallbackContext context);
         void OnInteract(InputAction.CallbackContext context);
         void OnMousePosition(InputAction.CallbackContext context);
         void OnEscape(InputAction.CallbackContext context);

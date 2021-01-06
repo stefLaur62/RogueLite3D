@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     public InventoryObject inventory;
     public GameObject inventoryScreen;
     public GameObject escapeScreen;
+    public GameObject PlayerStatScreen;
+
     public void Start()
     {
         SetCursor(false);
@@ -63,6 +65,20 @@ public class Player : MonoBehaviour
         {
             escapeScreen.SetActive(!escapeScreen.activeSelf);
             if (escapeScreen.activeSelf)
+            {
+                Time.timeScale = 0;
+                SetCursor(true);
+            }
+            else
+            {
+                Time.timeScale = 1;
+                SetCursor(false);
+            }
+        }
+        if (playerActionControls.Player.playerStat.triggered)
+        {
+            PlayerStatScreen.SetActive(!PlayerStatScreen.activeSelf);
+            if (PlayerStatScreen.activeSelf)
             {
                 Time.timeScale = 0;
                 SetCursor(true);

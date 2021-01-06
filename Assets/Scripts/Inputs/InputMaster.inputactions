@@ -54,8 +54,8 @@
                     "interactions": ""
                 },
                 {
-                    "name": "SaveGame",
-                    "type": "PassThrough",
+                    "name": "playerStat",
+                    "type": "Button",
                     "id": "c67b50fd-be00-4595-a26a-73b6836cef48",
                     "expectedControlType": "Button",
                     "processors": "",
@@ -424,7 +424,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SaveGame",
+                    "action": "playerStat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -435,7 +435,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SaveGame",
+                    "action": "playerStat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },
@@ -446,7 +446,7 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "",
-                    "action": "SaveGame",
+                    "action": "playerStat",
                     "isComposite": false,
                     "isPartOfComposite": false
                 },

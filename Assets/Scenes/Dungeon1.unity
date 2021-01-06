@@ -2484,6 +2484,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 130981295}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &134953691 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2678806252241762381, guid: d3c5c12f62bd3344a87f082f58547efd,
+    type: 3}
+  m_PrefabInstance: {fileID: 1347124419}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &137295121
 GameObject:
   m_ObjectHideFlags: 0
@@ -6384,6 +6390,11 @@ PrefabInstance:
       propertyPath: inventoryScreen
       value: 
       objectReference: {fileID: 1347124423}
+    - target: {fileID: 6162752763131087978, guid: 197deea3584294c4fbb35404e942415f,
+        type: 3}
+      propertyPath: PlayerStatScreen
+      value: 
+      objectReference: {fileID: 134953691}
     - target: {fileID: 6162752763131087979, guid: 197deea3584294c4fbb35404e942415f,
         type: 3}
       propertyPath: cameraTransform
@@ -25453,6 +25464,11 @@ PrefabInstance:
     - target: {fileID: 1105943818564022942, guid: d3c5c12f62bd3344a87f082f58547efd,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2678806252241762381, guid: d3c5c12f62bd3344a87f082f58547efd,
+        type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6268488107853980261, guid: d3c5c12f62bd3344a87f082f58547efd,

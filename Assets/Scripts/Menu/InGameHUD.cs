@@ -1,11 +1,13 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using UnityEngine.UI;
 public class InGameHUD : MonoBehaviour
 {
-   public void LeaveGame()
+
+    public void LeaveGame()
     {
         #if UNITY_EDITOR
             UnityEditor.EditorApplication.isPlaying = false;
