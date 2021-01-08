@@ -59,7 +59,7 @@ CharacterController:
   m_StepOffset: 0.6
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
-  m_Center: {x: 0, y: 0.8, z: 0}
+  m_Center: {x: 0, y: 0.835, z: 0}
 --- !u!114 &6162752763131087988
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73,8 +73,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerAttack: {fileID: 6162752763131087991}
-  speed: 6
-  walkSpeed: 3
+  speed: 5
+  walkSpeed: 2.5
   gravity: -17
   jumpHeight: 0.8
   velocity: {x: 0, y: 0, z: 0}
@@ -102,6 +102,8 @@ MonoBehaviour:
     type: 3}
   playerEquipment: {fileID: 0}
   basicDamage: 5
+  healthBar: {fileID: 0}
+  mageAttackClip: {fileID: 8300000, guid: 7a9ad7a07a25d084687cdcd509b5c182, type: 3}
 --- !u!114 &6162752763131087978
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -117,6 +119,7 @@ MonoBehaviour:
   inventory: {fileID: 11400000, guid: 21cb2dc7eef04a447a43dd382651b87c, type: 2}
   inventoryScreen: {fileID: 0}
   escapeScreen: {fileID: 0}
+  PlayerStatScreen: {fileID: 0}
 --- !u!114 &6162752763131087979
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -269,6 +272,7 @@ MonoBehaviour:
   deathClip: {fileID: 8300000, guid: 5ab493edc9863eb46815e39dbba38c32, type: 3}
   gameData: {fileID: 11400000, guid: 4b8d816162b29554d8d109fe64ef3846, type: 2}
   deathHUD: {fileID: 0}
+  backgroundAudioSource: {fileID: 0}
 --- !u!1 &6162752763397625328
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
@@ -28,14 +29,22 @@ public class EnemyAttack : MonoBehaviour
     void Update()
     {
         CheckDistance();
+        IsAttacking();
     }
     private void CheckDistance()
     {
         float distance = Vector3.Distance(playerPosition.position, transform.position);
-
         if (distance <= attackDistance)
         {
             Attack();
+        }
+    }
+
+    private void IsAttacking()
+    {
+        if (animator.GetCurrentAnimatorStateInfo(0).IsName("Attack"))
+        {
+            agent.enabled = false;
         }
     }
 
@@ -46,6 +55,7 @@ public class EnemyAttack : MonoBehaviour
 
     public void DamagePlayer()
     {
+        Debug.Log("Damage");
         Collider[] colliders = Physics.OverlapSphere(attackCenter.position, 0.4f);
         for (int i = 0; i < colliders.Length; i++)
         {

@@ -124,25 +124,12 @@ public class PlayerAttack : MonoBehaviour
         }
         else if (attackInput > 0)
         {
-            SetAttackingAnimation();
             isAttacking = true;
             animator.SetBool("isAttacking", true);
         }
         
     }
 
-    private void SetAttackingAnimation()
-    {
-        if (animator != null)
-        {
-            //anim.SetTrigger("isAttacking");
-        }
-        else
-        {
-            Debug.LogError("No animation loaded");
-        }
-    }
-   
     public void OnSwordHit(Collider other)
     {
         animator.SetBool("isAttacking", false);

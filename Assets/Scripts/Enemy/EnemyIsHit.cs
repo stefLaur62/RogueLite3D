@@ -65,7 +65,7 @@ public class EnemyIsHit : MonoBehaviour
 
     private int GiveXp()
     {
-        return Random.Range((gameData.level - 1) * 50, gameData.level * 50);
+        return Random.Range((gameData.level - 1) * 30, gameData.level * 50);
     }
     public void SetDatase()
     {
