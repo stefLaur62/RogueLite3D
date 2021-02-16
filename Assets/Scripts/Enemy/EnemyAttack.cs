@@ -55,7 +55,6 @@ public class EnemyAttack : MonoBehaviour
 
     public void DamagePlayer()
     {
-        Debug.Log("Damage");
         Collider[] colliders = Physics.OverlapSphere(attackCenter.position, 0.4f);
         for (int i = 0; i < colliders.Length; i++)
         {

@@ -1569,7 +1569,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: 1098af86014d56d45abc38a64416974a, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.05
+  m_Volume: 0.019
   m_Pitch: 1
   Loop: 1
   Mute: 0
@@ -1974,6 +1974,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1576707129353434213, guid: e7b77fabfd966d5499ca801f8b8602d6,
         type: 3}
+      propertyPath: health
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576707129353434213, guid: e7b77fabfd966d5499ca801f8b8602d6,
+        type: 3}
       propertyPath: dataManager
       value: 
       objectReference: {fileID: 167952534}
@@ -1981,6 +1986,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: EnemyDarkElf
+      objectReference: {fileID: 0}
+    - target: {fileID: 1576707129353434214, guid: e7b77fabfd966d5499ca801f8b8602d6,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1576707129353434232, guid: e7b77fabfd966d5499ca801f8b8602d6,
         type: 3}
